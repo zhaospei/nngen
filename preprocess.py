@@ -56,12 +56,12 @@ def split_data(source_seqs, target_seqs):
             train_source_seqs.append(source_seq)
             train_target_seqs.append(target_seq)
     
-    write_string_to_file(f'data/cmg.test.diff', '\n'.join(test_source_seqs))
-    write_string_to_file(f'data/cmg.test.msg', '\n'.join(test_target_seqs))
-    write_string_to_file(f'data/cmg.train.diff', '\n'.join(train_source_seqs))
-    write_string_to_file(f'data/cmg.train.msg', '\n'.join(train_target_seqs))
-    write_string_to_file(f'data/cmg.valid.diff', '\n'.join(valid_source_seqs))
-    write_string_to_file(f'data/cmg.valid.msg', '\n'.join(valid_target_seqs))
+    write_string_to_file(f'data/cmg.test.diff', '\n'.join(test_source_seqs) + '\n')
+    write_string_to_file(f'data/cmg.test.msg', '\n'.join(test_target_seqs) + '\n')
+    write_string_to_file(f'data/cmg.train.diff', '\n'.join(train_source_seqs) + '\n')
+    write_string_to_file(f'data/cmg.train.msg', '\n'.join(train_target_seqs) + '\n')
+    write_string_to_file(f'data/cmg.valid.diff', '\n'.join(valid_source_seqs) + '\n')
+    write_string_to_file(f'data/cmg.valid.msg', '\n'.join(valid_target_seqs) + '\n')
 
 def word_tokenizer(sentence):
     words = WordPunctTokenizer().tokenize(sentence)
