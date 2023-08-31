@@ -1,1198 +1,1265 @@
-daemon : ldm : avoid manual free ()
-rrdtool plugin : Wait for the ` queue thread ' to exit ..
-utils_cache plugin : Fix memory leak .
-don ' t forget to liberate etype
-buffer : guard against integer overflow
-crypto : fix memory leak in ECDH :: SetPrivateKey
-openssl : fix uninitialized memory access
-Put our CIB into slave mode on exit
-PE : Prevent a potential use of NULL
+ovs_events plugin : Replace strncpy () with sstrncpy ().
+Fixed memory leak in collectdclient library .
+Added the instance name to varnish API
+fix leak in cc_mslsa . c
+strdup ( 0 ) now returns 0
+src : fix nullptr dereference for signal during startup
+src : make CipherBase :: kind_ const
+return with CL_EFORMAT instead of CL_EDSIG
+fix previous commit
 Fix a election calculation
-Low : tools : crm_simulate - fix small xpath memory leak in inject_node_state ()
-TE : Always exit via mainloop
-oid : handle NULL pointers passed to git_oid_shorten_free ()
-fileops : fix invalid read
+decrease the repeating of the same log
+wallet : Add error handling . Check return value of ParseUInt32 (...) in ParseHDKeypath (...).
+repository : plug memory leak
+checkout : free last created directory
+refs : fix unused - but - set warning
+fetch - pack : Finish negotation if remote replies " ACK % s ready "
+git_connect_git (): forbid newlines in host and path
+git - pickaxe : fix nth_line ()
 credential : avoid writing values with newlines
-git - show : Reject native ref
-wt - status . c : fix a memleak
-Illumos 5311 - traverse_dnode may report success when it should not
-imap : Mark DELETE command as potentially closing mailbox .
-doveadm proxy : Don ' t crash if remote doesn ' t support log proxying
-mail_modifylog_mark_synced () didn ' t update mmap
+[ PATCH ] Fix git - init - db creating crap directories .
+imap search : Fixed YOUNGER / OLDER
+lib - fs : fs_write_stream_finish ( file , NULL ) is now alias to fs_write_stream_finish_async ( file )
+lib : hash - format - fix leak on _init () failure path
+POP3 : A bit more code for handling nicely unsupported auth mechanisms .
 doveadm - mail - mailbox : Whitespace fix
-lib : Add asserts to t_abspath and t_abspath_to
-lib - storage : mailbox_get_guid () crashed if storage didn ' t support GUIDs .
-lib - auth : Fix memory leak in auth_client_request_abort ()
-lib - index : mail - index - transaction - export : Fixed handling of transaction_flag_updates_have_non_internal () return value .
-doveadm - save : Set exit code to EX_TEMPFAIL on open error
-lib - storage : mailbox_list_delete_trash () - Don ' t ignore errors
-authd : remove some whitespace
-sasl : Fixed a memory leak on OOM
-setopt : fix CURLOPT_SSH_AUTH_TYPES option read
-Freed up an allocated pointer prior to a return .
-introduced a new # include in response to Andrei ' s uri changes
-core : free SE header parsed structure
+lib - index : Fixed sequence lookup of newly created mails in transaction view .
+i_stream_stat () should return NULL for closed istreams
+data stack : Fixes to handling out - of - memory situations .
+lib - storage : Previous change incorrectly reverted setting parent shared namespace usable .
+openssl : Fixed Curl_ossl_cert_status_request () not returning FALSE
+imap : Added check for new internal imap response code
+hostip . c : return immediately from Curl_resolv_timeout () upon expired timeout .
+smb : Don ' t try to connect with empty credentials
+clarified the URL part based on the problems Martin Hilpert had
+Improved a line of code checked in earlier .
+Fix a unit test mistake .
+Fix a coverity complaint .
 pua : release lock on not finding temp dialog
-ctl : free allocated pointer in case of error
-tm : define tm_ctx_get () to NULL if no WITH_TM_CTX
-Fixed two mem - leaks in Path - handling .
-erlang : Fix memory leak
-sca : fix snprintf buffer size for Expires header in replies to SUBSCRIBE .
-Added some errorchecking in rs_set_warmth_auto ().
+topoh : free nbuf
+dmq : initialize peer_list to NULL by default
+freeing filetype_str when not needed anymore .
+ao / wasapi : more consistent / reliable method of computing extra WAVEFORMATEXTENSIBLE size
+demux_lavf : mark ASS tracks as always UTF - 8
+vo_opengl : free to - be - added hook on hook array overflow
 msg : don ' t prefix slave - mode stuff by default
-demux_mkv : fix minor memory leak
-fix scrolling status line in windows
-don ' t call video -> get_info if it ' s NULL
+wayland : don ' t change set fullscreen twice
+ffmjpeg yv12 422 fixed
+vo : mark frame lost after seek reset
+fix broken term_osd output in update_osd_msg ()
 fpgautils : Check for fgets error
+DevAPI : for_each_ { managed , logical } _proc helper macros
 Bugfix : RPC : Avoid processor - specific details in devdetails
-Bugfix : Free stratum nonce1 before replacing it with new value on reconnect
-Bugfix : Free shares discarded before beginning submission
 Fixed bug in AcpiGetHandle (): searching for a relative path always
 Initialized Status , line 386 .
+ACPICA : test timeout on global lock interface
+acpi : acpica : fix acpi operand cache leak in nseval . c
 Hardware : Fix possible recursive locking in hwregs . c
-target - arm : fix unsigned 64 bit right shifts .
-vl : Add failure check for SetEvent
-fix full frame updates for VNC clients
-tcg / optimize : fix setcond2 optimization
-s390 / kvm : Add check for priviledged SCLP handler
-block : keep bitmap if incremental backup job is cancelled
+typo in comment
+Added AML_NAMEPATH_OP to AmlDumpOperand case statement .
+slirp : Fill TCP / IP header template after SYN reception
+PPC : e500 : correct params -> ram_size with ram_size
+block / vmdk : do not report file offset for compressed extents
+XBZRLE cache size should not be larger than guest memory size
+qemu / iovec : Don ' t assert if sbytes is zero
+usb : sanity check setup_index + setup_len in post_load
+virtio : avoid buffer overrun on incoming migration
+target - arm : Fix TCG temporary leaks for scalar VMULL
 pulse - audio : fix bug on updating rpos
-block / iscsi : fix uninitialized variable
-target - mips : remove POOL48A from the microMIPS decoding
-handle SD CMD5 without error messages
-bb # 11135 - sigtool now verifies cvd prior to unpacking
-bb # 11129 - applied unencoded '@' patch
-fix loop in cab file processing : ensure window position within frame
-libfdisk : gpt : avoid unnecessary pmbr check
+i8259 : Do not update IRQ output after spurious pic_poll_read
+vfio - pci : Fix MSI / X debug code
+vmdk : Fix format specific information ( create type ) for streamOptimized
+dconf : disable swizzor heuristic by default
+bz10893 : fixes bug for hash calculations when using -- allmatch .
+tailf : fix memmove () usage
 sys - utils / ipcutils : be careful when call calloc () for uint64 nmembs
-rpmdbRemove () should free header it read
-sync : don ' t count EXPUNGED record annotations in CRC
-log quirky searches
-mboxlist : fix uninitialised memory use where pattern is " Other Users "
+Fix a memleak in torrentmodel .
+fix : segfault through python bindings with fd to non - package (# 24089 ).
+added ignoreSet to rpmRunTransaction ()
+added an error message when rmdir () fails
+conversations : don ' t rename to self !
+Oops , got the sense of a return backwards .
+http_jmap . c : gracefully handle NULL mailboxes on close
 cyr_expire : missing flag is fine
+buf : don ' t realloc for every buf_ensure
 cyr_expire : don ' t resurrect convdb for deleted user
 mailbox : but if there ' s no partition , then it really is removed
-http_dav : allow read - free - busy to be set via DAV
-adding check error code
-shorten : set invalid channels count to 0
-avplay : clear pkt_temp when pkt is freed .
-fixing segfault with http :// sam . zoy . org / zzuf / lol - ffplay . avi
-put_bits : fix invalid shift by 32 in flush_put_bits ()
-gcc bug workaround by ( Jonathan Gray < khalek at linuxgamers dot net >)
-vsrc_movie : fix leak in request_frame ()
-mpegts : Make sure we don ' t return uninitialized packets
-dash : Use correct ISO C scanf conversion specifier
-libopenh264enc : Return a more sensible error code in some init failure paths
-Fix a read past end of buffer crash in the mp3 probe
-lavfi : use designated initializers in avfilter_class
+Call clusterUpdateState () after CLUSTER SETSLOT too .
+fix recursion typo in zmalloc_usable
+lavc : set avctx -> hwaccel before init
+remove unnecessary - 1 from snprintf len
+avprobe : free options at the end of main ()
+oops , potential overflow on really large blocks
+rl2 : Avoid a division by zero
+Check that the seekheads were created
+force sample for qcelp when not stored in mov , fix # 968
+wmapro : return early on unsupported condition
 twinvq : validate that channels is not <= 0
-smoothstreamingenc : Check the output UrlContext before accessing it
-audemux : Add a sanity check for the number of channels
+mxfdec : return error if no segments are available in mxf_get_sorted_table_segments
+fix a memleak in av_metadata_set ()
+add a memory check just in case
 fix HMAC error report
-purple : Fix crash on ft requests from unknown contacts
-wsutil : return false if NULL is asked as profile name ( CID : 1405202 ).
-[ SUA ] Change the dissector table sua . prop . tags to use DISSECTOR_TABLE_ALLOW_DUPLICATE
-tshark : fix double memory free when analyzing several RTP streams
-Qt : Fix leaked interfaces array in Wireless frame
-Put volatile back - without it , the compiler warns you .
-Break out of an infinite loop . Fixes bug 95 .
+made paircompare () static
+Added support for password - protected Jabber chatrooms .
+Improved failure handling in jabber_si_handle_request (). If the imcb
+Reset the captured - packet count when we start or restart a capture .
+Avoid a possible dereference of null pointer .
+mqtt : Copy UAT match_criteria value
+Gryphon : do not use col_set_str with non constant strings
+sprintf big fix
+gtk : Fix null dereference in stats
+Add a description for errno EINVAL ( Invalid Argument ) to
+Extract the center frequency from Peek tagged files .
+From : Susanne Edlund
+Qt : Apply recent column widths when columns changed
+Add a cast to try and fix the OSX buildbot .
 Patch by Michael Wallner , signed off by Edin Kadribasic .
-Fixed NULL pointer dereferencing
-fix : prevent possible crash
-IE we love you all ...
+Fixed heap overflow
+Fixed a memory leak inside imap_utf8 ()
+Added check for small ZEMD_MM_SEG_SIZE
 oops , 5 . 4 and 5 . 5 use malloc in TSRM
+Fixed possible memory leak .
+Fixed uninilized intern
+libfreerdp - gdi : fix gdi_Glyph_Free () segfault
 Reset the ThreadingMsgListModel after setting the previous model , too
-[ PATCH ] extend exec_program []
-resolved : merge two bools into a bitfield
-systemctl : return diffrent error code if service exist or not (# 3385 )
-sd - event : fix theoretical leak on error in event_make_signal_data
-libudev : always add UDEV_LOG
-udev : link - config - fix naming policy
-journal : make sure to initially populate the space info cache (# 4807 )
-rtnl : fix for 32bits
-resolved : don ' t allow adding of ANY class / type RRs to local zones
-sysctl : parse all keys in a config file
-Drop the DH group check to a weaker version of the checks
-Fix an off by 8
-allocate cleam memory for cipher to play with
-rdpei : Fix possible NULL ptr access
-libfreerdp - core : fix server crash in case rdp key file is not provided .
+switch - root : do not use close old_root_fd after rm_rf_children ()
+install : don ' t choke on dead links
+util : look at STDOUT , not STDIN , when determining tty columns
+[ PATCH ] allow NAME_SIZE > SYSFS_PATH_MAX
+swap : don ' t add too many deps for swap files form / proc / swap
+libudev : fix sysnum logic for digit - only device names
+path - lookup : use correct cleanup function for strv (# 5007 )
+Check if header is there
+catch error code
+Fixed memory leak .
+Fixed memory leak .
+Fixed # 6009 : Bounds checks in autodetect_recv_bandwidth_measure_results
+Fixed argument check in < tls_disconnect >
 Fixed return value for DST .
 Fixed windows command line
-fix php 72494 , invalid color index not handled , can lead to crash
-Remove CINT remnant
-Added missing default initializer for fDirector
-avformat / asfdec_f : Correct skip to key code
-mpeg4 : report frame decoding completion at ff_MPV_frame_end ().
-dxva : DXVA2_ModeHEVC_VLD_Main10 does not support Main
+libfreerdp - rfx : encoder must increase frameIdx or mstsc would crash .
+gdImageScaleTwoPass memory leak fix
+Protect from missing CodeGen .
+af_aresample : check ff_get_audio_buffer () failure
 lavf / tee : fix leak of bsfs array .
-h264 : reset first_field when current_picture_ptr is reset
-avcodec / aacdec_fixed : Fix undefined shift
-smc : Fix overread .
-tests / audiomatch : Fix compile warning
-avutil / opt : dont crash on av_opt_set_dict () with NULL
-lavfi / hqdn3d : avoid use of uninitialized variable .
-avcodec / hevc : Silence " warning : ref0 / 1 may be used uninitialized in this function "
-mpc8 : fix channel checks
-libavformat / mxfdec : fix MXFPackage -> comment_refs memory leak
-mxfdec : fix memleak on mxf_read_close ()
-avformat / mpegenc : Check for av_mallocz () failure
-ffprobe : fix crash in case - of is specified with an empty string
-avcodec / wavpack : Fix runtime error : left shift of negative value - 1
+avcodec / g2meet : Also clear tile dimensions on header_fail
+avcodec / hevc_refs : Check nb_refs in add_candidate_ref ()
+avformat / mov : fix integer overflow
+bitstream : build_table , check table_nb_bits .
+shorten : fix " off by padding " bug
+mpeg4videodec : disable frame multithreading for GMC , its not implemented at all
+cmdutils : use sws_freeContext () instead of av_freep ().
 matroskadec : unset matroska -> done when seeking
-avcodec / g726 : Fix runtime error : left shift of negative value - 2
-oggdec : Fix memory leak in setting up vorbis headers
-avcodec / movtextdec : Call mov_text_cleanup () on close
-avcodec / mdec : Fix runtime error : left shift of negative value - 127
-hlsenc : Allocate enough space for the pattern string
-sgi : check maximum supported resolution
-wavpack : check ch_offset
-pthread : don ' t increment index on zero - sized packets .
-avcodec / avpacket : Check metadata key in av_packet_unpack_dictionary ()
+flacdec : silence several " warning : X may be used uninitialized in this function "
+ac3_fixed : fix out - of - bound read
+avoid uninitialised variable warning and clarify code
 avformat / smacker : check for format mismatch more completely
-avcodec / wmv2enc : allocate padding for extradata and check malloc failure
-threads : Perform the generic progress cleanup more carefully .
-fix incorrect check for abs_diff_pic_num overflow
-avformat / dump : Fix context / level for payload dump
-lavc / avpacket : check for malloc failure
+avcodec / utils : Fix overflow in get_bit_rates computations
+h264 : silence warning about array index being out of bounds
+avcodec / dcadec : Check that the added xch channel isnt already there
+avcodec / utils : check the private context class
+kill uninitialised variable warning in mp3_read_probe ()
+aes : fix array index out of bounds warning
+vmd : use the PALETTE_COUNT constant uniformly
+dsicinav : Check for out of bounds reads
+qdm2 : avoid integer overflow
+avcodec / takdec : Fixes : integer overflow in AV_SAMPLE_FMT_U8P output
+aviobuf : Handle a NULL buffer in avio_close_dyn_buf
+jpeg2000 : Make nreslevel fields int
 avcodec / alac : only set * got_frame_ptr when all channels have been decoded
-lavfi / scale : allocate interlaced scalers only if needed .
-mpegaudiodec : Validate that the number of channels fits at the given offset
+opusdec : Don ' t run vector_fmul_scalar on zero length arrays
+avcodec / truemotion2 : Fix integer overflows in tm2_high_chroma ()
+vaapi_h264 : Scale log2_max_pic_order_cnt_lsb with max_b_frames
+rawdec : use av_shrink_packet .
 rv10 : consider B frames in low delay streams invalid .
-lavf / pcm : check size , do not produce invalid packets
-libstagefright : avoid memory leak
-mpevideo_enc : disallow multiple slices for h261 and flv
-flashsv2_prime : check block before using it .
-avcodec / extract_extradata_bsf : Fix leak discovered via fuzzing
-avcodec / hevc : use av_mallocz () for allocating tab_ipm
+flvdec : allocate large enough buffer so get_bits () doesnt overread
+ituh263 : reject b - frame with pp_time = 0
+examples / vaapi_encode : Fix leak on hwframe init failure
+avcodec / jpeg2000 : Check that codsty -> log2_prec_widths / heights has been initialized
+lavc / mediacodec_wrapper : fix potential jni global reference leak
+audemux : Check channels isnt 0
+lavfi : af_amerge options array was not ended with NULL
+vc1dec : silence " may be used uninitialized in this function " warning from gcc
 avcodec / jpeg2000dwt : Check ndeclevels before calling dwt_decode *()
-avcodec / mjpegdec : zero gb to silence warning about it being possibly uninitialized
-Fix a warning on an uninitialized variable .
-aacdec : Fix null pointer crash
-msrle : Use FFABS to determine the frame size in msrle_decode_pal4
-avcodec / dca_lbr : Fix off by 1 error in freq check
-avformat / utils : avformat_find_stream_info fix a crash in case of oom
-lavc / hevcdec : fix invalid use of ff_get_format ()
-avutil / frame : fix av_frame_copy for unknown layouts
-avcodec / webp : Update canvas size in vp8_lossy_decode_frame () as in vp8_lossless_decode_frame ()
-h265_parse : skip zero sized NAL units
-ffv1 : set internal frame defaults
-wavpack : check K , fix assertion failure
-h264 : Check that the codec isn ' t null before accessing it
-truemotion1 : use av_freep ()
-ffprobe : fix NULL pointer dereference in writer_close ()
-smoothstreamingenc : Fix a memory leak on errors
-wmalosslessdec : Reset residues to 0 if they were not decoded from bitstream .
-libx265 : Pass through user - set frame type
-h264 : initialize H264Context . avctx in init_thread_copy
-msmpeg4 : ignore negative DC overflow
-avutil / imgutils : correctly check for negative SAR components
-dds : disable palette flag for compressed dds
-rtpdec : Fix the minimum packet length for RTCP SR packets
-Check for out of bound writes in the avs demuxer .
-avformat / pcmdec : fix memory leak
-ffserver : free pathname before bailing out
-avcodec / mpeg4videodec : Clear interlaced_dct for studio profile
-Set start_time to 0 for raw audio files .
-avcodec / smc : Check remaining input
-img2dec : dont set start_time / duration to invalid values
-avformat / mxfdec : fix typo in error check of mxf_edit_unit_absolute_offset ()
-avutil / mem_internal : add missing header includes
-avcodec / wavpack : Fix integer overflow in wv_unpack_stereo ()
+videotoolbox : fix crash when decoding interlaced video with new API
+mpc8 : Check the seek table size parsed from the bitstream
+avcodec / rawdec : check for side data before checking its size
+avcodec / interplayvideo : Check that enough data is available for opcode_0x9
+avcodec / jpeglsdec : check shift for values that cause overflow later
+vp56 : Check for missing reference frame data
+vf_gradfun : make config_props work properly when called multiple times .
+ffprobe : fix value_string () prefix printing for values with negative logarithm
+avformat / cache : Avoid int - overflow in cache compare function
+avcodec / pcm - dvd : reset last header on errors
+Fix out of bound reads in the QDM2 decoder .
+swscale : don ' t use planar output functions to write to NV12 / 21 .
+ffplay : disallow seeking before the start of the file
+lavfi : avfilter_merge_formats : handle case where inputs are same
+avformat / asfdec_f : Assert that packet positions match in asf_read_pts ()
+rtmpproto : Send chunk size on the network channel
+flashsv : check deflateInit () return value
+lavc / movtextdec : keep the min size instead of max to fix overread .
+mkv : mark corrupted packets and return them
+icodec : fix leaking pkt on error
+lavc / ffjni : fix uninitialized variable
+lzo : fix overflow checking in copy_backptr ()
+bitpacked : fix potential overflow
+avformat / mov : use 64bit for size in mov_skip_multiple_stsd ()
+avformat / utils : avoid overflow in compute_chapters_end () with huge durations
+smoothstreamingenc : fix integer overflow
+parser : fix large overreads
+rmenc : more than 2 streams are not currently possible .
+avcodec / ass_split : Fix null pointer dereference in ff_ass_style_get ()
 avcodec / mjpegdec : Check for rgb before flipping
-avformat / mxfdec : fix null pointer dereference
-dcadec : check xch_base_channel against channel_order_tab .
-cmdutils : fix null pointer dereference
-oggenc : fix " oggstream may be used uninitialized in this function " warning
-hevc : fix wpp threading deadlock .
+libvo - amrwbenc : Add braces to shut up gcc warning .
 tiffenc : fix bpp value for monow / monob formats
-avcodec / eatgv : use av_mallocz () for frame_buffer
-ffprobe : fix uninitialized variable warning
-avformat / cache : Use int64_t to avoid int overflow in cache_read
-decode : Initialize ret before using it
-ra144enc : avoid integer overflows .
+lavf / movenc : check ff_mov_init_hinting () return
+update_frame_pool : use channel field
+yadif : check input video size .
 cmdutils : fix uninitialized variable ( type ) warning .
-xan : Prevent NULL dereference with missing palette
-avcodec / nvenc : set correct error code
-avformat / segment : Pass flags to child context
-avidec : Check that the header chunks fit in the available filesize .
-avformat / gxf : Use 64bit for res to avoid overflow
+avcodec / opusdec : check alignment , misalignment could lead to crashes with avx
+avcodec / mjpegdec : Check for pixfmtid 0x42111100 || 0x24111100 with more than 8 bits
+matroskadec : add assert on lack of overflow in pkt_size + offset
+aacsbr : Silence warning : max_qmf_subbands may be used uninitialized in this function
 avcodec / alsdec : Clear MPEG4AudioConfig so that no use of uninitialized memory is possible
-mpeg12dec : reset data size after parsing extradata .
-avcodec / crystalhd : allocate padding for extradata
+fixup_vorbis_headers : add missing malloc failure check
+mpegvideo : Avoid 32 - bit wrapping of linesize multiplications
 brstm : reject negative sample rate
-vc1dec : fix block_off
-vqf : check samplerate , avoid division by 0 .
+xavs : Do not try to set the bitrate tolerance without a bitrate
 checkasm : v210 : Fix array overwrite
-ffprobe : free shared writer context on exit
+avcodec / dcadsp : Fix runtime error : signed integer overflow
+dpcm : Fix invalid writes
+lavd / xv : fix memory leak
+id3v2 : fix compiler warning for uninitialized variables
 Correcting wrong looking stream_id validity check in avidec .
-avformat / apngdec : Use 64bit ret to avoid overflow
-lavc / avpacket : Fix undefined behaviour , do not pass a null pointer to memcpy ().
-avcodec_decode_audio : do not trust the channel layout , use the channel count .
-electronicarts : check timebase , fix assertion failure
-fixing q > 0 . 0 assert failure caused by overflow of variance for b frames
-avformat / matroskadec : fix integer overflow
-Fixed a segfault in the DCA decoder with corrupted streams .
-avcodec / a64multienc : use av_frame_ref instead of copying the frame
-mem : Handle av_reallocp (..., 0 ) properly
-swr / rematrix : fix C99 left shift overflow
-h264 : correct ref count check and limit , fix out of array accesses .
-checkasm : v210 : Fix array overwrite
-indeo4 : update AVCodecContext width / height on size change
-lavfi : fix use - after - free in ff_filter_frame .
+cdxl demux : do not create packets with uninitialized data at EOF .
+mpegaudidec : 10l forgot buf_size
+vfwcap : support MJPG compressed streams .
+avutil / tree : fix memleaks
+hevc_ps : make sure failing to decode an SPS always returns an error
+avformat / dss : Use av_freep () to avoid leaving stale pointers in memory
+avformat / avidec : Check nb_streams in read_gab2_sub ()
+indeo4 : Skip null frames .
+rtp : Fix integer underflow that could allow remote code execution .
+Do a little more checking .
+matroskadec : fix a sanity check .
+aacsbr : fix integer overflow
+avformat / pjsdec : dont increase pointer when its already at the end in read_ts ()
+avformat / hlsenc : Fix a memory leak when http_persistent is 1
 avcodec / hevc_filter : Fix invalid shift
+avcodec / smvjpegdec : return the packet size instead of 0
+avcodec / pngenc : Check that there is at least 1 frame
+aacenc : fix out of array writes
 mp3enc : fix signed C99 overflow
-avcodec / ffv1dec : Fix out of array read in slice counting
 avformat / bethsoftvid : check 4th header byte in probe
-examples / demuxing : free AVPacket after usage
-avcodec / msrle : check return code for success before use
 avformat / mxfdec : cleanup if parsing the header metadata fails
-Prevent calling init_vlc () with invalid parameters in motionpixels decoder .
-Fix a mem leak in vc1_decode_frame ().
-mxf_set_audio_pts : fix division by 0
-avcodec / zmbv : Check that the buffer is large enough for mvec
-lavf / ftp : fix possible crash
-avcodec / snowdec : Fix runtime error : left shift of negative value - 1
+lavc / ffjni : fix local reference leak
+mpegvideo_enc : remove assert that has become obsolete with the new API
+dump_stream_format : fix division by 0
+lavfi / alphamerge : fix leak introduced in 217163eb
+matroskadec : fix a memory leak
 lavc : do not leak frames in avcodec_decode_audio4
-avcodec / mpeg4videodec : Clear mcsel before decoding an image
-lavfi / lut3d : avoid overread .
-af_aresample : fix leak on alloc failure
+lavc / libopenjpegenc : check av_frame_alloc () failure .
+avcodec / wmalosslessdec : shrink output on error so no uninitialized data is returned
+vaapi_h264 : Scale log2_max_pic_order_cnt_lsb with max_b_frames
 lavf : don ' t leak corrupted packets
-vf_scale : don ' t leak SWS context .
-avcodec / dirac_vlc : Fix invalid shift in ff_dirac_golomb_read_32bit ()
-xwma : check bytes_per_sample , fix division by 0 .
+avcodec / mjpegdec : Check escape sequence validity
+mss1 : improve check if decoded pivot is invalid
+lavf / swf : Fix auto - detection of compressed files .
 asfenc : fix leaking asf -> index_ptr on error
-avplay : reset rdft when closing stream .
-avcodec / mpeg_er : Clear mcsel in mpeg_er_decode_mb ()
-hlsproto : Properly close avio buffer in case of error
-prores : Evaluate all the quantizers
+rawdec : propagate pict_type information to the output frame
+segafilm : fix division by 0
 swscale : fix signed overflow in yuv2mono_X_c_template
-cafdec : fix overflow checking in read_header ()
-avformat / thp : check av_get_packet () for failure
-avconv : free packet in write_frame () when discarding due to frame number limit
-rtmpproto : Lengthen the filename buffer when receiving streams
-ipmovie : do not read audio packets before the codec is known
-avcodec / mpegaudiodec_template : Correct return code on id3 tag discarding
+vp8 : avoid race condition on segment map .
+avcodec / pgssubdec : Use av_fast_padded_malloc () for rle buffer
+* fix double free
+lavfi / fifo : add assert to ensure request was successfull .
+avcodec / ulti : Check number of blocks at init
+avcodec / pngdec : Clean up on av_frame_ref () failure
+protect realloc overflow
+asfenc : fix leaking asf -> index_ptr on error
+mpc8 : check stream count before accessing stream 1 .
+lavf / mpeg : Initialize a stack variable used by memcmp ().
+mxfdec : Fix files > 2 GiB
+mpegts : fix demuxing PES private stream 2
+qtpalette : make the color_ * variables unsigned again
+avformat / icodec : Fix crash probing fuzzed file
+sanm : remove " duplicate " for loop .
+libavformat / rtpenc_mpegts : check avformat_new_stream () return value
+vaapi : return early from ff_vaapi_render_picture () without picture
+matroskadec : fix leak on error
 avcodec / mjpegdec : Fix DC overflow in decode_block ()
-lavf probe : prevent codec probe with no data at all seen
-diracdec : Test mctmp and mcscratch for malloc failure .
-avcodec / mpegvideo_enc : check that max_b_frames is not negative
-rtsp : Fix a crash with the RTSP muxer
+utils . c : fix crash with threading enabled .
+avformat / libquvi : Fix whitelist handling
+avformat / mov : fix avg_frame_rate calculation
+rtsp : Fix compiler warning for uninitialized variable .
+ffmpeg : Fix bsf corrupting merged side data
+avcodec / takdec : Fix integer overflow in decode_lpc ()
+rtsp : Don ' t use uninitialized data if there are no streams
+avcodec / jpeg2000dec : Check SIZ dimensions to be within the supported range
 avformat / flac_picture : allocate buffer padding for picture
+libavformat / hdsenc : check init_file () return code
+examples / filtering_audio : fix a memory leak .
 libopencore - amr : check return value of avcodec_alloc_frame ()
-matroskadec : use uint64_t instead of int for index_scale
-riff : fix division by zero for G726
-avformat / ipmovie : Check OPCODE_CREATE_TIMER size
-avutil / opt : initialize ret
-lavfi / nnedi : Fix a memleak .
-r3d : check that sampling rate is non negative .
-avcodec / pcm : Fix overflow in bitrate computation
-avcodec / imgconvert : fix possible null pointer dereference
-avcodec / vqavideo : use av_mallocz () for decode_buffer ()
-mov_probe : fix integer overflows
-yuv2rgb : fix integer overflow in fill_gv_table ()
-avcodec / mlpdec : Do not leave a invalid num_primitive_matrices in the context
-avformat / movenc : Fix potential leak of sgpd_entries array .
-decode : avoid leaks on failure in ff_get_buffer ()
-audio_frame_queue : fix null ptr dereference
-avformat / avio : fix memory leak in url_find_protocol
-avcodec / bitstream : assert that no integer overflow happened when writing codes in build_table ()
+avcodec / dvdsub_parser : never return 0 when the input isnt 0
+Remove lowres support from wmv2 decoder
+indeo4 : check ref_mb
+opt : fix memleak on error of range_array
+ffplay : add existence check on ic -> pb in decode_thread ()
+avcodec / vp9_superframe_bsf : cache packets by creating new references rather than moving them
+lavfi / deshake : fix crash in uninit ()
+avformat / iff : check avio_read () return in get_metadata ()
+avformat / smoothstreamingenc : Use av_mallocz_array ()
+VP3 : Prevent stack corruption from an unset custom coding method .
+avformat / ivfenc : fix division by zero
+avcodec / flac_parser : Update nb_headers_buffered
 avcodec / takdec : Fix runtime error : left shift of negative value - 360
-avformat / hlsenc : Free context after hls_append_segment
-ffmpeg : Fix crash with ost -> last_frame allocation failure
-fix decoding of coupling leak info for normal AC - 3
-sanity check whether dimensions are non - null
-avs : fix infinite loop on end - of - stream .
-libfdk - aacdec : Correct buffer_size parameter
-cbs_h264 : Fix memory leak in error case
-utils : fix avcodec_flush_buffers pre - reference counting compatibility
-avcodec / mpeg4video_parser : Check for extradata parsing failure
-avformat / utils : Do not select audio streams with unknown sample rate in av_find_best_stream ()
-avcodec / mpeg4videodec : use av_fast_padded_malloc () for bitstream buffer
-avconv : check that the output format context exists before accessing it
-mpegts : Make sure we don ' t return uninitialized packets
-smc : fix the bounds check
-vf_overlay : ensure the overlay frame does not get leaked .
-avcodec / vp56 : Reset have_undamaged_frame on resolution changes
-movenc : fixes a questionable valgrind uninitialized value warning
-avcodec / webp : Add missing input padding
-vc1 : properly zero coded_block [] edges on new slice entry .
-avcodec / wavpackenc : fix uninitialized ret
-avcodec / pictordec : Check plane value before doing value / mask computations
-mpegmux : add stuffing to avoid incomplete PCM frames
-avcodec / aac_adtstoasc_bsf : Fix memory leak
-qsvdec : Fix memory leak on error
-avformat / asfdec_f : Fix memleak
+avcodec / h264 / find_start_code : factorize addition out
+avformat / dfa : check first frame offset in probe
+libavcodec / x86 / h264dsp_mmx . c : add forgotten HAVE_YASM
+crypto : Use av_freep instead of av_free
+avcodec / apedec : use av_fast_padded_malloc ()
+avcodec / dirac_vlc : Fix invalid shift
+av_probe_input_format3 : support NULL as buffer . Fixes null ptr deref
+wma : Clip WMA1 and WMA2 frame length to 11 bits .
+lavc / options : fix leaks in avcodec_free_context
+rtsp : Check for command strings without spaces
+avcodec / ffv1dec : Clear quant_table_count if its invalid
+tiff : set the correct return value when check_size () fails
+wmavoice : fix a signed overflow
+avformat / adxdec : check avctx -> channels for invalid values
+idcin : fix memleak
+Free the RTSPStreams in ff_rtsp_close_streams
+lavd / v4l2 : do not fail when VIDIOC_ENUMSTD returns ENODATA
+avcodec / ffv1dec : update progress in case of broken pointer chains
+lagarith : check count before writing zeros .
+ffmpeg_opt : Check for localtime () failure
+remove useless cast that makes code unreadable
+id3v2 : catch avio_read errors in check_tag
+mov : fix heap buffer overflow
+j2k : reorder multiplications to avoid interger overflows related to precincts
+check std tag size before reading .
+quickdraw : Make the palette opaque
 avutil / fixed_dsp : Check for av_malloc () failure
-doc / examples / transcoding : check encoder before using it
-avcodec / exr : fix undefined shift in pxr24_uncompress ()
-careful with mmap off
-add LOG entry when opening feed in browser
+avcodec / nvenc : Fix forcing constqp rc mode
+avpacket : fix size check in packet_alloc
+avformat / concatdec : avoid NULL dereference when failed to open file .
 kvm - irqchip : only commit route when irqchip is used
-qcow2 : Assert against currently impossible overflow
-qapi : Fix memory leak
-target - sparc : on UA2005 don ' t deliver Interrupt_level_n IRQs in hypervisor mode
-input : add sanity check
-block : Plug memory leak on brv_open_image () error path
-tests : test - qmp - commands : Fix double free
-e1000e : Fix build with gcc 4 . 6 . 3 and ust tracing
-block / iscsi : fix uninitialized variable
-esp : cancel current request only if some request is in flight
-block : Fix memory leak in hmp_drive_add_node ()
-qemu - img : mandate argument to ' qemu - img check -- repair '
-vnc : fix a memory leak in threaded vnc server
-init_paths : fix minor memory leak
-spapr_vscsi : fix build error introduced by f19661c8
-block : fix qcow2_co_flush deadlock
+qcow2 : Fix new L1 table size check ( CVE - 2014 - 0143 )
+target / sh4 : fix TCG leak during gusa sequence
+block : Fix anonymous BBs in blk_root_inactivate ()
+fix : unrealize virtio device if we fail to hotplug it
+Fix a crash with monitor input arriving before readline_start has been called
+ppc / spapr_drc : fix memory leak
+vl : new runstate transition : RUN_STATE_GUEST_PANICKED -> RUN_STATE_FINISH_MIGRATE
+dma : Fix stupid typo / thinko
+exec : Fix bounce buffer allocation in address_space_map ()
+block / qcow2 - bitmap : fix use of uninitialized pointer
+virtio : Plug memleak by freeing vdev
+darwin - user : Remove unneeded null pointer check
+macio : fix overflow in lba to offset conversion for ATAPI devices
+vdi : Fix memory leak
 arm / translate - a64 : mark path as unreachable to eliminate warning
-ide : Correct improper smart self test counter reset in ide core .
+virtio - net : don ' t touch virtqueue if vm is stopped
 tcg : Fix off - by - one in assert in page_set_flags
-replay : Fix dangling location bug in replay_configure ()
-char : don ' t silently skip tn3270 protocol init when TLS is enabled
-ppc : Remove a potential overflow in muldiv64 ()
-block : record new size in bdrv_dirty_bitmap_truncate
-hw / i386 / acpi_build . c : Avoid shifting left into sign bit
-target / loongarch : Clean up tlb when cpu reset
-vfio - pci : Fix missing unparent of dynamically allocated MemoryRegion
+qxl : Slot sanity check in qxl_phys2virt () is off by one , fix
+block / qcow2 : Add missing GCC_FMT_ATTR to function report_unsupported ()
+msix : implement pba write ( but read - only )
+hw / display / exynos4210_fimd : Fix bit - swapping code
+tcg / ppc64 : Fix zero extension code generation bug for ppc64 host
+pcihp : fix possible array out of bounds
+target - s390x : fix setcc in TCG mode
+block : Fix bdrv_is_allocated () return value
+iohandler : Use bool for boolean struct member and remove holes
+vhost : remove an incorrect assert
+qcow2 : Prevent numerical overflow
+s390 / sclpconsole : prevent char layer callback during initialization
+virtio - net : count VIRTIO_NET_F_MAC when calculating config_len
 xilinx_timer : Fixed deadlock issue
-target - ppc : Bug in BookE wait instruction
-fix segfault in setting migration speed
-coroutine : Fix use after free with qemu_coroutine_yield ()
-tcg : allocate s -> op_dead_iargs dynamically
-hw / nvram / spapr_nvram : Device can not be created by the users
+thread - pool : add missing qemu_bh_cancel in completion function
+vmxnet3 : validate interrupt indices read on migration
+vnc : fix qemu crash when not configure vnc option
+s390x : s390_cpu_get_phys_page_debug has to return - 1
+ui / spice - display . c : add missing initialization for valgrind
 rtl8139 : skip offload on short TCP header ( CVE - 2015 - 5165 )
-hw / sd . c : Set ILLEGAL_COMMAND for ACMDs in invalid state
-cpus . c : qemu_mutex_lock_iothread fix race condition at cpu thread init
-cuda : fix crash on Windows
-audio : release capture buffers
-qom : Make object_property_set_qobject ()' s input visitor strict
-acpi - build : disable with - no - acpi
-qiov : prevent double free or use - after - free
-throttle : Assert that bkt -> max is valid in throttle_compute_wait ()
-linux - user - i386 : Fix crash on cpuid
-i386 : kvmvapic : initialise imm32 variable
-char : serial : check divider value against baud base
-hw / isa / pc87312 : Mark the device with user_creatable = false
-target - i386 : cpu : Fix potential buffer overrun in get_register_name_32 ()
-tcg / mips : Fix regression caused by typo ( copy + paste bug )
-ehci : add sanity check for maxframes
-target - s390x : fix CC computation for EX instruction
+block / parallels : fix access to not initialized memory in catalog_bitmap
+scsi : Make device scsi - disk reject / dev / sg *
+crypto : fix leak in ivgen essiv init
+Bugfix : PowerPC 64 slbia never invalidates the first segment entry .
+qcow2 : Fix leaks in dirty images
+hw / 9pfs / virtio - 9p - posix - acl : Fix out - of - bounds access
+target / arm : fix TCG temp leak in aarch64 rev16
+scsi : initialise info object with appropriate size
+vhost : assert the log was cleaned up
+vnc : fix qemu crash because of SIGSEGV
+ahci : fix buffer overrun on invalid state load
+use new helper name
+qcow2 : Fix error handling in qcow2_alloc_cluster_offset
 slirp : check len against dhcp options array end
-powerpc pci : fixed packing of ranges []
-hw / misc / ivshmem : Fix ivshmem_recv_msg () to also work on big endian systems
-scsi : esp : check buffer length before reading scsi command
-tcg / optimize : optimize " op r , a , a => mov r , a "
-vl : free err
-hw / arm / virt : fix cpu object reference leak
-block : check for existing device IDs in external_snapshot_prepare ()
-scsi - disk : release AioContext in unaligned WRITE SAME case
-replay : fix error message
-block - verify : fix 32 - bit build
-acpi : Assert sts array limit on AcpiCpuHotplug_add ()
+ARM : ACPI : fix the AML ID format for CPU devices
+scsi - block : fix direction of BYTCHK test for VERIFY commands
+kvm : Switch to unlocked MMIO
+io : fix qio_channel_socket_accept err handling
+xhci : fix numintrs sanity checks
+QMP : Check " arguments " member ' s type
+target - ppc / fpu_helper : Fix efscmp * instructions handling
+block / vpc : fix uninitialised variable compiler warning
+blkverify : Fix BDS leak in . bdrv_open error path
+spice : fix memory leak
+pcnet : fix rx buffer overflow ( CVE - 2015 - 7512 )
 syscall : fix use of uninitialized values
-vhost - user : print original request on error
-dump : fix memory_mapping_filter leak
-lm32_uart : fix receive buffering
-acpi - build : fix memory leak with bridge hp off
-qdev : Fix crash when using non - device class name on - global
-tests : fix check - qom - interface leaks
-vhost - user : verify that number of queues is non - zero
-block : Fix multiwrite error handling
-loader : fix undefined behavior in rom_order_compare ()
-linux - user / syscall . c : remove warning : ‘ array ’ may be used uninitialized in this function
+cadence_uart : bounds check write offset
+cadence_gem : avoid stack - writing buffer - overrun
+qemu - char : fix warning ' res ' may be used uninitialized
+iothread : check iothread -> ctx before aio_context_unref to avoid assertion
+qdev : Free opts on failed do_device_add
+vmdk : Fix use of uninitialised value
 coroutine - sigaltstack : Change jmp_buf to sigjmp_buf
-qemu - img : Fix leakage of options on error
-hw / pci / pci_host . c : Avoid shifting left into sign bit
-block : Remove redundant assertion
 ivshmem : check shm isn ' t already initialized
+check - qdict : Fix possible crash
 tcg : correct 32 - bit tcg_gen_ld8s_i64 sign - extension
-spapr / htab : fix savevm
-vhost : fix dirty page handling
-sockets : Plug memory leak in socket_address_flatten ()
-tap : clear vhost_net backend on cleanup
-linux - user : getpriority errno fix
+replay : bh scheduling fix
+timer : stm32f2xx_timer : add check for prescaler value
+qom : Fix memory leak in object_property_set_link ()
+spapr_pci : parent the MSI memory region to the PHB
+ppc405 : Fix memory leak
 io : fix check for handshake completion in TLS test
-qemu - img : Plug memory leak in convert command
-xen / pt : Set is_express to avoid out - of - bounds write
-block : Catch ! bs -> drv in bdrv_check ()
-exec : always use MADV_DONTFORK
-dma : rc4030 : limit interval timer reload value
-json - parser : Fix potential NULL pointer segfault
-thread - pool : avoid deadlock in nested aio_poll () calls
-qemu - option : Fix uninitialized value in append_option_parameter
-linux - user : Correct type for BLKSSZGET
-usb - redir : Fix crash on migration with no client connected
-block / ssh : Avoid segfault if inet_connect doesn ' t set errno .
-vnc : sanitize bits_per_pixel from the client
-posix - aio - compat : Plug memory leak on paio_init () error path
+sheepdog : fix NULL dereference in sd_create
+hw / intc / exynos4210_combiner : Don ' t overrun output_irq array in init
+vmxnet3 : validate queues configuration read on migration
+vhost : fix a memory leak
+cpus : initialize cpu -> memory_dispatch
+ARM : fix segfault
+qemu - img : add check for zero - length job len
+kvm / ioapic : dump real object instead of a fake one
+gdbstub : fix for commit 87f25c12bfeaaa0c41fb857713bbc7e8a9b757dc
+xhci : fix overflow in usb_xhci_post_load
+tests : fix rsp leak in postcopy - test
 ivshmem - server : fix possible OVERRUN
-char : fix missing return in error path for chardev TLS init
-target - s390x : Mark check_privileged () as ! CONFIG_USER_ONLY
 qemu - config : fix leak in query - command - line - options
-spapr_drc : Fix potential undefined behaviour
-fix return check for KVM_GET_DIRTY_LOG ioctl
-block / vvfat : Plug memory leak in check_directory_consistency ()
-hw / arm : Mark the " fsl , imx6 " device with user_creatable = false
+target - alpha : fix uninitialized variable
+tests : fix memory leak in virtio - scsi - test
+pci : Clean up error checking in pci_add_capability ()
+vga : fix invalid read after free
+vhost - user - bridge : fix resume regression ( since 2 . 9 )
+usb : xhci : fix memory leak in usb_xhci_exit
+linux - aio : Fix laio_submit error handling
+hw / acpi / aml - build : Fix memory leak
+vnc : Fix crash on ' info vnc ' after ' change vnc none '
+qxl : call dpy_gfx_resize when entering vga mode
+target - arm / translate - a64 : Fix wrong mmu_idx usage for LDT / STT
 usb : xhci : no DMA on HC reset
-block / iscsi : fix memory corruption on iscsi resize
-target - i386 : CPUID : return highest basic leaf if eax > cpuid_xlevel
-hw / scsi / spapr_vscsi : Remove superfluous memset
-fix double free the memslot in kvm_set_phys_mem
-vfio / pci : Fix regression in MSI routing configuration
-input : fix memory leak
-target - i386 : avoid overflow in the tsc - frequency property
-blockjobs : fix set - speed kick
-qemu - char : don ' t leak opts on error
-target - arm : check that LSB <= MSB in BFI instruction
-spapr : Move memory hotplug to RTAS_LOG_V6_HP_ID_DRC_COUNT type
-qemu - ga : become_daemon (): reopen standard fds to / dev / null
-target / ppc : Fix wrong number of UAMR register
-cpu : Don ' t clear cpu -> exit_request on reset
-ivshmem : Fix fd leak on error
-vmdk : fix double free
-hw / intc / arm_gic : Fix NVIC assertion failure
-target - ppc : Fix use of uninitialized TCG variable in tlbiva
-Initialize all bits in the sigaction .
-extra check in mg_start (): options may be NULL
-missing list close
-Correcting a comment .
+qdev : Fix memory leak in function set_pci_devfn
+usb : check USB configuration descriptor object
+kvm : Mark VCPU state dirty on creation
+block / mirror : check backing in bdrv_mirror_top_refresh_filename
+qapi : fix memory leak in bdrv_image_info_specific_dump
+qdev - properties . h : Explicitly set the default value for arraylen properties
+hw / misc / mmio_interface : Return after error_setg () to avoid crash
+s390 - ccw : Fix alignment for CCW1
+qemu - char : fix infinite recursion connecting to monitor pty
+hw / i386 / acpi - build . c : Fix memory leak in acpi_build_tables_cleanup ()
+tests : fix ipmi - kcs - test leak
+fsdev : Fix overrun after readlink () fills buffer completely
+pci : Fix memory leak
+block : Don ' t use error_abort in blk_new_open
+qcow2 : Fix grow_refcount_table error handling
+virtio - net : properly check the vhost status during status set
+core / graph : free RGraphEdges when freeing long_edges list
+Check if debug is dead in r_debug_kill function .
+format / zimg : make sure there are enough bytes in the buffer
+Disable self :// in sandbox mode
+bail out when no proxy was configured
+pid - 1 is not our child
+logging : use fchmod instead of chmod to avoid TOCTOU race
+plugins / python : fix tracebaker resource leaks on import error
+Fixed a missing brake in a switch case construct , spotted by Crab .
+Initialize all members .
 added Jonatan Alam � as catalan translator
-fix possible OOB write in gif2tiff . c
-* tools / tiffcrop . c : fix readContigStripsIntoBuffer () in - i ( ignore ) mode so
-systemctl : fix memory leak (# 7289 )
-sd - login . c : fixup for d70964d0
-sysusers : fix memleak (# 4430 )
-ude_rules . c : fix possible NULL pointer dereference in get_key ()
+conf - parser : fix strv parsing
+bus : fix issue with reference counting
 util : cunescape - fix memleak in error path
-terminal / screen : perform bold -> light conversion only on foreground
-basic / strv : use existing qsort_safe () helper
-sd - bus : fix object tree to be deeper than 2 levels
-fstab - util : detect out - of - range pri = assignments
-bus : in sd_bus_try_close () consider local read queue too
+hibernate - resume : refuse to run outside of an initrd
+load - fragment : setting empty string to Nice = resets the previous assignments
+libudev : monitor - export MAJOR / MINOR only if available
+udev : properly detect reference to unexisting part of PROGRAM ' s result
+cgroup : properly determine cgroups zombie processes belong to
+pam : skip DBUS_SESSION_BUS_ADDRESS export when kdbus is not active
+core / mount : skip incomplete mountinfo entries
 resolved : use dns_answer_size () where appropriate to handle NULL DnsAnswer
-Call all configured exec_dump_fn ' s when SIGUSR2 is received
-app : clear current path from the context after copying it
-app : update ` gimp - xcf - save ` procedure documentation .
-Bug 701120 : Opening fuzzed . pnm - file causes stack buffer overflow
-Remove a " register " keyword from C ++ code
-fixed bug # 1661 Compiling -- pstack fails with binutils 2 . 13 . 90
-do not ignore first char , when truncating spaces in str -> num conversion .
-branches / 5 . 1 : Use btr_free_root () instead of fseg_free () for
-bugfix : delayed insert table was using other table ' s expr_arena
-[ trunk ] Fix simple warning about sign conversion
-Fix a NULL pointer dereference in parse_server_transport_line ().
-Fix a check - spaces complaint
-initialize memory to remove Valgrind warning ( Zooko , Jeffrey Walton )
+don ' t choke if there are no sockets for a service
+app : skip keyboard devices so the device list becomes reasonable
+app : typo : make string translatable
+[ ot ] Ensure layout in hb_ot_layout_table_get_lookup_count ()
+[ t : 5131 ] closes # 5131 .
+Fixed issue with retrying autocommitted transactions . We might need to
+sco compile fix : MAXPATHLEN
+refs # 5133 , fix compilation error
+branches / zip : btr_cur_optimistic_insert (): If btr_page_reorganize ()
+Fixed a bug in vis . c
+Fixed bug in sub select after last merge
+correct fix for the bug # 6151
+branches / innodb +: row_purge_remove_sec_if_poss_low (): Remove a suspicious
+r8682 @ Kushana : nickm | 2006 - 08 - 29 17 : 58 : 59 - 0400
+take back half of my bugfix . comparing times sucks .
+Bridges are always dirs
 layouts : fix memory leak
-Prevent slurmctld from dumping core ifjob_resrcs is missing in the
-Initialize variable to eliminate clang error
-Missing batch job given exit code of 1
-Changed default styleObj offsets to 0 , duh ...
-Fix the previous change .
-[ coop handles ] Fix monotonic handle check race with stw in mono_handle_new
-[ runtime ] Free leaked variable . (# 4643 )
-[ sgen ] Fix names of descriptor types in describe_ptr ().
-Replace a g_assert with a g_error .
-Ignore seq points of entry and exit IL offsets .
-[ runtime ] Make mono_trace_set_printerr_handler () call g_set_printerr_handler (). Fixes # 31451 .
-* mini - s390 [ x ]. c ( is_regsize_var ): Support PTR / FNPTR too .
-auth : Reset the TSIG state between queries
-Prevents a possible memory leak
-have to call delete_files before done ; oops
-Added # prog_id import syntax for TSs without SDT
-fix for v1 infe ( MPEG conformance file )
-sm - common : fixed resource leak
-card - westcos . c : fixed potential resource leak
-[ Fix ] Simplexmlelement should throw an exception rather than fatal
-Fix a bug in handleAssertionEffects
+removed debug message
+[ profiler ] Use thread_exited profiler event for recording thread end events .
+[ mono ] Fix maybe - uninitialized warning .
+Check the packet size in dnspcap2protobuf
+queue : win32 : fix symbol export for M_queue_exists ()
+Fixed missing initialization
+pathbar : don ' t unconditionally iterate over buttons when scrolling
+window - slot : protect against no new view
+fix memory leak in MPD Byte range objects
+fixed # 1769 ( fuzz )
+Fixed bug in image loader
+Fixed out of bounds access in ASN . 1 Octet string
+gio : changed default symbols
+[ XrdCl ] Initialize pStateRedirec to avoid a segfault while recovering
+groupserv : Actually free mygroups and groupacs .`
+chanserv / antiflood : update mqueue_t . last_used when adding new messages
+m_ssl_gnutls Only generate DH params when dh_params is inited
+nickflood : Allow changes to UID
+Convert the output limit back to the parameter
 linux : Make modal dialog show more smoothly
 ospf6d : don ' t run DR election early on " ipv6 ospf6 priority "
+lib , stream : fix stream sanity checks
+[ bgpd ] 64 - bit bugfix in community_del_val by Jeremy Jackson < jerj @ coplanar . net >
+peephole optimization for LOADNIL before STRCAT ; ref # 3110
 forgot to free irep -> reps
-eliminate an LLVM warning about an unused value
-compose : fix infinite loop in parser on some inputs
-xkbcomp : Don ' t explode on invalid virtual modifiers
-xkbcomp : fix pointer value for FreeStmt
-Fixed new bug due to a typo in the PNG00 fix
-Fixed incorrect call to WriteBlob reported in # 490 .
-fixed a server crash
+fix length check in read_section_debug (); fix # 1572
+ikev2 : during Child SA rekey negotiation abort when ESP proposals mismatch .
+Get openswan to send the remote host address to PAM during XAUTH
+Prevent the LDAP validator from accepting an empty password .
+cherokee_buffer_crc32 () did not handle empty buffers correctly .
+xkbcomp : fix stack overflow when evaluating boolean negation
 fixed input problem , partly :)
 mmv : use xstrdup instead of strdup ( for allocation tracking ).
-mk_core : thread : fix ucontext . h path
-[ ShellApp ] Signal windows - changed when removing a window
-reject pcre modifiers U with B
-get_url_file_name : Fixed crash on OOM on debug build
-hostip . c : return immediately from Curl_resolv_timeout () upon expired timeout .
-Fixed GL error with SDL on startup if not using nvidia card .
-m_stats : don ' t try to access bl_stats if it doesn ' t exist
-[ git / 2 . 1 regression ] Fix opj_write_tile () failure when numresolutions = 1
-fix error from commit 13585f15c7f7dc28bbbba1661efb280d530d114c
+uv - unix : fix warning : control reaches end of non - void function
+X3F / simple_decode_row : check for data offset limit
+window - tracker : Fix memory leak
+dns ( tcp ) - fix coverity cid 1374307
+pop3_doing : don ' t call pop3_dophase_done () if already failed
+http2 : Fix address sanitizer memcpy warning
+Fixed possible NULL pointer exception in ssl_get_ciphersuite ()
+diraliases : always set the tail of the list to NULL
+Spit out definition of YY_CHAR early
+cmd / gc : rephrase the invalid indexing operation error message
 Unauthenticated DH client certificate fix .
-fix previous modification -- if ssl -> cert is NULL , don ' t follow the pointer .
+X509_VERIFY_PARAM_free : Check param for NULL
+Typo : should check mgf1md
+Missing OPENSSL_free on error path .
 fix small memory leak with string - type templates
-cast DWORD to int to match % d printf specifier
-Try to fix # 302 .
+core bugfix : small memory leak in external command parser
+imudp : add error msg when listener wasn ' t created
+Fixed bug in IRC plugin when receiving data from server
+core : replace constant by sizeof in a call to snprintf
+Fix a crash with xmllint -- path on empty results
+fix : don ' t pass colour - codes to filters
+Make a string translatable .
 Refresh the log window on pool failure message at startup .
-Fixed one byte stack overflow in mcast recvfrom .
-ccpp : open file for dump_fd_info with O_EXCL
-refine addr_header comparison
-src / pcm . c : Improve error reporting .
-[ trunk ] added box length inconsistency check
-make pigz work on . spl files , otherwise pigz can ' t breaks with kiwi
-add missing g_free
-set_interface_var () doesn ' t check interface name and blindly does
-Closing connection after mg_send_digest_auth ()
-CID 90884 storage_db : Check for bad data type
-mobilesync : Plugging a memory leak
-jpc_t1cod : check whether passno is in range
-mips : return Fail on assert failure in MipsDisassembler . c
+fix multiple authentication using S / Key w / privsep
+fixed local DoS when UnregisterHandler was called for a not existing handler
+runner : init tmp handler
+Specialize the scrollbars for each platform
+reset ` reprocess_is_too_early ` when reprocessing
+add missing dd_close () to save_dump_dir_from_problem_data ()
+bplist : Make sure to detect integer overflow when handling unicode node size
+xplist : Prevent heap buffer overflow when parsing empty tags
+define IN6_ARE_ADDR_EQUAL macro for WIN32
+check if connection was accepted before logging
+cbson : PySequence_GetItem returns a new ref
+fix leak in handle_propfind ()
+idevice : free ssl object when SSL handshake fails
+BUG : porting bugfix from refactor @ 3da77df
+tpm2_getmanufec : only attempt to persist the EK if a handle was provided
+Fixing ' in ' opcode handler .
+librados : take lock when signaling notify cond
+osd : clear_prior when activating
+mds : Keep journaler in readonly mode until replay completes .
 rgw / rgw_rest . cc : fix 4K memory leak
-fixed non - root rooted path issue
-mds : handle MMonMap
-rgw : add xml output header in RGWCopyObj_ObjStore_S3 response msg
-rgw / rgw_rest . cc : fix uninitialized static struct
-rgw : AbortMultipart request returns NoSuchUpload if the meta obj doesn ' t
-osd : fix rare memory leak
-OutputDataSocket : fix uninit var
-msg : MHeartbeat has a private destructor
+Event : process event before pop it to avoid releasing
+msg : MLogAck has a private destructor
+rgw : was missing return value
+osd : init my_stat
+crush / CrushWrapper : fix out of bounds access
+filestore : sync object_map on _set_replay_guard ()
+add ceph_fsid_set helper
 msgr : fix problem with forced stop of pipe
-osd : EINVAL when rmw_flags is 0
-config option for mon ' s DNS SRV records
-Exit the max size loop when there ' s nothing left possible to find
-Issue 23433 in oss - fuzz : Heap - buffer - overflow in findNextBorderPixel ()
-fix memory leak .
-rsvg_characters_impl (): Unref the chars node we just created
-apps / sipdial : add support for sips : URI scheme
-Initialize pointer to NULL
-Applying InnoDB snapshot
-stole magnus ' fix for random im test failures from 5 . 1 - maint
-typo in libedit fixed - possible buffer overflow - bug # 4696
-fixed bug # 1661 Compiling -- pstack fails with binutils 2 . 13 . 90
-Fixed a problem with Innodb_buffer_pool_pages_latched status variable .
-cleaned up lots - o - warnings build
-set correct cert type in CertificateRequest when using ChaCha suite with ECDSA
+kclient : fix NULL dereferencing oops
+tar : fix crash on broken tar file .
+bgo # 748608 - Destroy cairo_t after use
+remove invalid free
+regcomp : use long jumps if there is any possibility of overflow
+libvncserver : scale : cast to 64 bit before shifting
+virDomainGetTime : Deny on RO connections
+Throw on skipping an invalid type .
+branches / zip : backport r3848 from 6 . 0 branch
+Edited fix for # 1224 .
+Fixed issue with ECDH - ECDSA cipher suites rejecting certificates without
+initialize extra name entries to 0
 [ ARM ] export copy_page
-sh : Use __GFP_ZERO for dma_generic_alloc_coherent ().
-module : printk message when module signature fail taints kernel .
-[ IPSEC ]: Fix inetpeer leak in ipv4 xfrm dst entries .
-rmap : recompute pgoff for unmapping huge page
-mtd : nand_bbt : set the smallest size of bbt table
-cgroup : make sure memcg margin is 0 when over limit
-KVM : PPC : e500 : Eliminate preempt_disable in local_sid_destroy_all
-xen / pciback : Check PF instead of VF for PCI_COMMAND_MEMORY
-loop : Update mtime when writing using aops
-mtd : orion_nand : Fix build failure caused by typo
+[ PATCH ] uml : activate_fd : return ENOMEM only when appropriate
+drm / fb - helper : Do the ' max_conn_count ' zero check
+staging : comedi : adv_pci_dio : do board reset early in (* auto_attach )
+signal : always clear sa_restorer on execve
+Input : ati_remote - add missing input_sync ()
+omap : 4430SDP : Register the card detect GPIO properly
+ext4 : let ext4_group_add_blocks () handle 0 blocks quickly
 [ S390 ] cio : fix orb initialization in cio_start_key
-iwlagn : check beacon frame size
+igmp : Avoid zero delay when receiving odd mixture of IGMP queries
+isicom : Deinline drop_dtr , save 112 bytes
+iio staging : fix lis3l02dq , read error handling
+ARM : OMAP : Initialize PWM backlight enable_gpio field
+ext3 : update ctime when changing the file ' s permission by setfacl
+cfg80211 : reset auth algorithm
+[ ETH ]: Validate address in eth_mac_addr
+intel - iommu : Fix reattaching of devices to identity mapping domain
 Input : imx6ul_tsc - check for negative return value
-brcmfmac : remove ( ab ) use of NL80211_NUM_ACS
-brcm80211 : smac : set interface down on reset
-staging : lustre : info leak in lnet_ping ()
-pm2fb : reset transparency settings
-bsg : fix bsg_poll () to return POLLOUT properly
-[ IA64 ] Fix trap # 45 handling
-[ SCSI ] ps3rom : sector size should be 512 bytes
-Staging : cxt1e1 : use netdev_priv to fix build
-pinctrl : sirf : Remove gpiochip on failure cases
-ath10k : don ' t call quiet mode if it ' s not implemented
-xen / p2m : Fix one - off error in checking the P2M tree directory .
-ARM : SPEAr : conditionalize l2x0 support
-[ TG3 ]: Update version to 3 . 82 .
-vfs : do_last (): only return EISDIR for O_CREAT
-KVM : SVM : Set the ' busy ' flag of the TR selector
-vxge : Fix a possible memory leak in vxge_hw_device_initialize ().
-ath9k : Send AUTHORIZED event only for station mode
-Staging : crystalhd : use vfree () instead of kfree ()
-ath5k : fix NULL pointer in antenna configuration
-[ PATCH ] KVM : fix bogus pagefault on writable pages
+drm / i915 : Fix intel_tile_width () parameters
+davinci_emac : off by one
+[ PATCH ] lockdep : annotate scheduler runqueue locks
+[ XFRM ]: xfrm_address_t annotations
+[ media ] si2157 : advertise Si2158 A20 firmware
+[ PATCH ] struct path : convert openpromfs
+[ SCSI ] More USB deadlock fixes
+[ PATCH ] Mobil Pentium 4 HT and the NMI
+KVM : i8259 : simplify pic_irq_request () calling sequence
+[ IA64 ] Remove sparse warning from unwind code
+[ SCSI ] be2iscsi : memset wrb for ring create
+perf script : Fix a NULL pointer dereference
+iio : iio : Fix iio_channel_read return if channel havn ' t info
+ath9k_hw : index out of bounds
+ieee802154 : 6lowpan : Drop PACKET_OTHERHOST skbs in 6lowpan
+[ PATCH ] janitor : reiserfs : super . c - vfree () checking cleanups
+taskstats : cgroupstats_user_cmd () may leak on error
+fs : Fix theoretical division by 0 in super_cache_scan ().
+[ SPARC64 ]: Fix pfn_pte () build failure .
 perf inject : Do not repipe attributes to a perf . data file
-fib6 : use FIB_LOOKUP_NOREF in fib6_rule_lookup ()
-ceph : drop CAP_LINK_SHARED when sending " link " request to MDS
-USB : xhci : No GFP_KERNEL in block error handling
-[ media ] hdpvr : Fix memory leak
-Staging : vt6655 : add missing free_netdev () on error in hostap_enable_hostapd ()
-lib : correct 842 decompress for 32 bit
-PCI : spear : Fix Section mismatch compilation warning for probe ()
-md : check the return of mddev_find ()
-drivers / serial / uartlite . c : Add missing of_node_put
+bonding : always update last_arp_rx on packet recieve
+[ MIPS ] Fix oprofile module unloading
+sdhci : don ' t warn about sdhci 2 . 0 controllers
+ath9k : Use memcpy in ath_clone_txbuf ()
+[ media ] r820t : better report signal strength
+um : finally kill -> init_str leaks
 Fix an OOPS when initializing IR remote on saa7134
-ASoC : wm8731 : fix wm8731_check_osc () connected condition
-drbd : fix if (); found by kbuild test robot
-IPoIB : Free child interfaces properly
-[ SCSI ] libfc : Fix e_d_tov ns -> ms scaling factor in PLOGI response .
-spi : s3c64xx : Zero dma_slave_config struct in prepare_dma ()
-stmmac : fix csr clock divisor for 300MHz
-af_iucv : support ancillary data with HS transport
-mwifiex : use maximum ssid length as 0xfe for p2p
-vfs : fix spinning prevention in prune_icache_sb
+HID : core : fix reporting of raw events
+NFSD : Put exports after nfsd4_layout_verify fail
+cxgb4 : allow large buffer size to have page size
+/ drivers / staging / dgrp : Fixed warning unchecked sscanf return value
+drm / nouveau : fix crash with noaccel = 1
+drivers / net / usb / usbnet . c : Use FIELD_SIZEOF macro in usbnet_init () function .
+[ IA64 ] mbcs_init () should give up unless running on sn2
+xen / xenbus : export xenbus_dev_changed
+kconfig : initialize the screen before using curses ( 3 ) functions
+[ NETFILTER ]: Remove okfn usage in ip_vs_core . c
+drm / exynos : exynos_hdmi : Pass correct pointer to free_irq ()
 kdb : break out of kdb_ll () when command is terminated
-md : allow a partially recovered device to be hot - added to an array .
-f2fs : don ' t need to sync node page at every time
-tracing : Fix event format export
-[ media ] em28xx : fix em28xx - input removal
-netrom : Fix nr_getname () leak
-ipv4 : warn once on passing AF_INET6 socket to ip_recv_error
-sound : fix check for return value in snd_pcm_hw_refine
-Btrfs : fix extent_buffer leak during tree log replay
-gro : Fix bogus gso_size on the first fraglist entry
-ACPICA : Fix to allow aliases within ASL namepaths
+powerpc / vphn : NUMA node code expects big - endian
+cpufreq : e_powersaver : call CPUFREQ_POSTCHANGE notfier in error cases
+[ S390 ] cio : fix memleak in resume path
+cciss : handle allocation failure
+ALSA : hda / realtek - Create " Bass Speaker " for two speaker pins
+macb : Fix speed setting
+drivers / rtc / rtc - da9052 . c : register ability of alarm to wake device from suspend
+ALSA : hda - Force to reset IEC958 status bits for AD codecs
+[ SCSI ] gdth : fix buffer overflow
+tracing / ftrace : make nop tracer reset previous entries
+[ PATCH ] USB : check for device in zd1201_resume
+wl18xx : create per - chip - family private storage
 [ PATCH ] orinoco : Make nortel_pci_hw_init () static .
-Staging : lustre : osc : Remove null check before kfree
-ASoC : Intel : mfld - pcm : don ' t call trigger ops to DSP for internal streams
-dmaengine : k3 : Remove chancnt affectations
-x86 , mrst : Don ' t blindly access extended config space
-mmc : sdhci - bcm - kona : Handle error from mmc_of_parse ()
-rt2x00 : Shortcut link state updates when not operating as STA
-sched : Try to deal with low capacity , fix update_sd_power_savings_stats ()
-staging : brcm80211 : remove unnecessary cast in wlc_d11hdrs_mac80211
-[ PATCH ] IB : fix CM use - after - free
-md : skip all metadata update processing when using external metadata .
-Btrfs : process mount options on mount - o remount ,
-sh_eth : check TSU registers ioremap () error
+staging : ozwpan : Check for correct config number .
+sys_sync (): fix 16 % performance regression in ffsb create_4k test
+ARM : prevent VM_GROWSDOWN mmaps extending below FIRST_USER_ADDRESS
+[ media ] pvrusb2 : Fix a few missing default control values , for cropping
+drm / mgag200 : check alloc_apertures () success in mga_vram_init ()
+KVM : ioapic : fix assignment of ioapic -> rtc_status . pending_eoi ( CVE - 2014 - 0155 )
+usb : dwc3 : gadget : add a debugging print when initializing endpoints
 ASoC : tlv320aic3x : Convert codec -> hw_read to snd_soc_read
-[ PATCH ] selinux : Fix MLS compatibility off - by - one bug
-ehca : convert cpu notifier to return encapsulate errno value
-[ POWERPC ] EEH : Work with device endpoint , always
-[ media ] fc2580 : silence uninitialized variable warning
+[ SPARC64 ]: Fix loop termination in mark_kpte_bitmap ()
 Btrfs : should add a permission check for setfacl
+thermal : core : ignore invalid trip temperature
 rtlwifi : rtl8192cu : Fix error in pointer arithmetic
-usb : dwc2 : gadget : ignore stall check for ep0
-ipv4 : fix nexthop attlen check in fib_nh_match
-gpio : potential null dereference
-ASoC : Fix typo in 24 . 576MHz rate in WM5100
-Staging : unisys : visorinput : Remove unused code
-mtip32xx : Set queue bounce limit
+perf machine : Fix leak of ' struct thread ' on error path
+drm / nouveau / bios : check for null script pointers in parser
+l2tp : fix a potential skb leak in l2tp_xmit_skb ()
+[ PATCH ] inotify : fix idr_get_new_above usage
+Btrfs : Fix a crash when mounting a subvolume
+fealnx : Write outside array bounds
 rtlwifi : rtl8821ae : Fix problem with regulatory information
-wl1271 : exit ELP mode when setting enabled rates in tx
-intel_pmic_gpio : fix off - by - one value range checking
-[ PATCH ] pcnet32 : remove incorrect pcnet32_free_ring
-Staging : sep : fix time handler
-perf hists : Don ' t consider filtered entries when calculating column widths
+ALSA : cs4232 : fix crash during chip PNP detection
+x86 / boot - image : Don ' t leak phdrs in arch / x86 / boot / compressed / misc . c :: Parse_elf ()
+suspend : switch the Asus Pundit P1 - AH2 to old ACPI sleep ordering
+drm / i915 : Permit pinning whilst the device is ' suspended '
+b43 : Force - wake queues on init
+[ PATCH ] remove unnecessary blk_queue_bounce in SG_IO
 netrom : fix info leak via msg_name in nr_recvmsg ()
-ipw2200 : support ETHTOOL_GPERMADDR
-xen : correct error for building p2m list on 32 bits
-dm - raid : silence compiler warning on rebuilds_per_group .
-Input : wistron_btns - fix a memory leak in wb_module_init error path
-dm era : check for a non - NULL metadata object before closing it
-sctp : add a checking for sctp_sysctl_net_register
-tools : iio : iio_event_monitor : check if event is fully read
-drm / radeon / kms : add pll debugging output
-[ IA64 ] Use set_cpus_allowed_ptr
+staging , media , easycap : Fix mem leak in easycap_usb_probe ()
+sigtimedwait : use freezable blocking call
+ir - core : Fix the delete logic
+[ TG3 ]: Update version to 3 . 85
+drm / exynos / fbdev : set smem_len for fbdev
+sonice : Fix build due to botched netdev_alloc_skb () conversion .
+sh : Account for INITIAL_JIFFIES when using jiffies clocksource .
+drivers / cdrom / gdrom . c : fix device number leak
+[ PATCH ] scsi_error thread exits in TASK_INTERRUPTIBLE state .
+mac80211 : fix PS vs . scan race
+ARM : 8544 / 1 : set_memory_xx fixes
+ata : fix sparse warning in ata_piix . c
+usb : host : xhci : Fix Null pointer dereferencing with 71c731a for non - x86 systems
 [ SCSI ] bnx2fc : Drop incoming ABTS
-include / linux / fs . h : fix userspace build
-b43 : Fix swatch warning
-Drivers : hv : hv_balloon : correctly handle val . freeram < num_pages case
-ALSA : hda / jack - Fix the assignment of input jack - type
-sky2 : print Optima chip name
-igb : Avoid uninitialized advertised variable in eee_set_cur
-[ S390 ] Fix timeval regression on s390
-staging : comedi : disallow COMEDI_DEVCONFIG on non - board minors
+arm64 : KVM : use ' int ' instead of ' u32 ' for variable ' target ' in kvm_host . h .
+e100 : make sure vlan support isn ' t advertised on old adapters
+mx3fb : fix regression with uninitalized fb_info -> mm_lock mutex
+xfrm6 : release dev before returning error
+perf stat : better error message for unsupported events
+rtc : Fix ioctl error path return
 staging : et131x : don ' t cast a void * to a struct pointer
-spidernet : fix memory leak in spider_net_stop
-perf hists browser : Fix segfault if use symbol filter in cmdline
-[ XFS ] Fix hang after disallowed rename across directory quota domains
-drm / radeon / kms : set fbdev_info for suspend / resume
-usb : dwc3 : ep0 : move to CONFIGURED also on delayed status
+misc : genwqe : Fix potential memory leak when pinning memory
+xfs : check if device support discard in xfs_ioc_trim ()
+dmaengine : mv_xor : fix big endian operation in register mode
+drivers / net / wan : introduce missing kfree
 toshiba_acpi : Fix mis - merge
 i2c : designware : retry transfer on transient failure
-mac80211 : fix memory leak
-clk : ti : apll : not allocating enough data
+[ ALSA ] hda - codec - Add first generation macbook subsystem ID
+drm / i915 / crt : Flush register prior to waiting for vblank .
+crypto : pcrypt - Use crypto_aead_set_reqsize helper
+tty : xuartps : Fix " may be used uninitialized " build warning
+hub : debug message for failing to enable device
 tracing / filters : free pred when clearing filters
-x86 - 64 : Don ' t use pointer to out - of - scope variable in dump_trace ()
-leds : leds - cobalt - raq . c - use resource_size ()
-batman - adv : remove broadcast packets scheduled for purged outgoing if
-[ S390 ] missing check in dasd_eer_open .
-drm / nouveau : remove pointless assignment
-vhost - net : fix vq_memory_access_ok error checking
-perf python : Initialize ' page_size ' variable
-drm / i915 : make sure panel is sequenced off when starting a mode set
-perf trace / scripting : Check return val of perl_run ()
-USB : Deref URB after usbmon is done with it
-ixgbe : Convert the normal transmit complete path to dev_consume_skb_any ()
-HID : hyperv : match wait_for_completion_timeout return type
-[ SCSI ] scsi_dh : Check for sdev state in store_dh_state ()
-amd / powerplay : don ' t enable ucode fan control if vbios has no fan table
-thinkpad_acpi : Fix a memory leak during module exit
-USB : fix regression occurring during device removal
-[ ALSA ] hda - codec - Fix NULL dereference in generic hda code
-[ SCSI ] ibmvfc : Fix DMA mapping leak on memory allocation failure
-[ SCSI ] mptfusion : Fix memory leak in mptctl_getiocinfo ()
-perf : Fix the software events state check
-perfcounters / powerpc : fix oops with multiple counters in a group
+decnet : fix shutdown parameter checking
+staging : comedi : do not return - ENOSYS .
+staging / zcache : Fix memory leak while dropping an o2net_sock_container object
+[ POWERPC ] Make irq_dispose_mapping ( NO_IRQ ) a nop
+mtd : nand : mxc_nand : Check the return value from clk_prepare_enable ()
+gianfar : Fix missing sock reference when processing TX time stamps
+Btrfs : fix race between allocate and release extent buffer .
+ath9k : Remove unused rx_edma in ath_rx_addbuffer_edma ()
+ALSA : hda - Add MSI blacklist
+iio : core : Handle error when mask type is not separate
+staging : mt29f_spinand : Export OF module alias information
+uselib : add missing MNT_NOEXEC check
+libata : initialize qc -> dma_dir to DMA_NONE
+GFS2 : Fix a use - after - free that coverity spotted
+perf symbols : Properly align symbol_conf . priv_size
+[ media ] media : davinci : vpif_display : drop unused member fbuffers
+[ S390 ] idle : avoid RCU usage in extended quiescent state
+m68k : export atari_keyb_init
+[ MTD ] mtd / ofpart . c : add MODULE_LICENSE
+[ SCSI ] qla2xxx : Process DPC requests within valid Fabric topologies .
 staging : wilc1000 : removes potential null dereference
-iget : use iget_failed () in GFS2
-[ media ] tda10071 : fix returned symbol rate calculation
-ext4 : don ' t leave i_crtime . tv_sec uninitialized
-ALSA : pcm : fix delta calculation at boundary wraparound
-net / 9p : Initialize opts -> privport as it should be .
-mt7601u : don ' t warn about devices without per - rate power table
-staging : iio : Documentation : rewrite the right hand side of an assignment
-xfs : catch invalid negative blknos in _xfs_buf_find ()
-x86 : correct the CPUID pattern for MSR_IA32_MISC_ENABLE availability
-OMAPDSS : HDMI : init output earlier
-[ IPV6 ]: Fix crash in ip6_del_rt
-ath9k / htc_drv_main : off by one error
-[ TG3 ]: Fix PHY loopback on 5700
-Btrfs : fix possible memory leak in btrfs_create_tree ()
-ALSA : fix excessive background noise introduced by OSS emulation rate shrink
-drm / i915 : check for supported depth at fb init time
-zd1211rw : use unaligned safe memcmp () in - place of compare_ether_addr ()
+parisc : isa - eeprom - Fix loff_t usage
+w1 : fix for loop exit condition in w1_seq_show ()
+firewire : core : remove an unnecessary zero initialization
+Staging : comedi : fix memory leak in comedi_bond . c
+md : check for memory allocation failure in faulty personality
+r8169 : balance pci_map / pci_unmap pair
+ALSA : hdsp - Ignore MIDI and PCM events in interrupts until initialized
+[ XFS ] Check return value of xfs_buf_get_noaddr ()
+i40e : validate VSI param from VFs
+ACPI : Fix crash on ASUS laptops
+ath10k : fix num_legacy_stations tracking
+xfs : ensure we capture IO errors correctly
+[ GFS2 ] Fix calculation of demote state
 perf tools : callchain : Fix spurious ' perf report ' warnings : ignore empty callchains
+[ PATCH ] ppc32 : don ' t call progress functions after boot
 mlx4_core : Fix memory leak in mlx4_enable_msi_x ()
-Input : amijoy - add missing platform check
-ARM : imx : initialize clk_init_data . flags for clk - fixup - mux
-NFSv4 : Return delegations synchronously in evict_inode
-Input : ati_remote - add missing input_sync ()
+batman - adv : Remove space before semicolon
+ARM : EXYNOS : Fix potential NULL pointer access in exynos_sys_powerdown_conf
+[ PATCH ] audit : Moved variable declaration to beginning of function
+fs / binfmt_misc . c : add terminating newline to / proc / sys / fs / binfmt_misc / status
 [ media ] vb2 : Check if there are buffers before streamon
-drm / msm : fix deadlock in bo create fail path
-drm / mga200g : Use lockless gem BO free callback
-[ ALSA ] Don ' t reject O_RDWR at opening PCM OSS with read / write - only device
-[ SCSI ] Fix block queue and elevator memory leak in scsi_alloc_sdev
-drm : shut up invalid edid messages
-cpufreq : fix obvious condition statement error
-acer - wmi : Add support for Aspire 1830 wlan hotkey
-ipv4 : Fix fib_trie . c build , missing linux / vmalloc . h include .
-libertas : down_interruptible () can return - EINTR , not EINTR
-drm / i915 : try not to lose backlight CBLV precision
-rt2x00 : rt2800lib : fix default TX power check for RT55xx
-rsi : avoid format string leak to thread name
-NFC : Clear pn533 target structure
-drivers / net / wan : remove exceptional & on function name
-usb : renesas_usbhs : fixup : avoid NULL access on error case pipe detach
+drm / radeon : fix UVD 256MB check
+[ NETFILTER ]: nfnetlink_queue : fix computation of allocated size for netlink skb .
+perf intel - pt : Fix off - by - one comparison on maximum code
+dm : swap target postsuspend call and setting suspended flag
+JFS : FIx one more plain integer as NULL pointer warning
+mmap : check -> vm_ops before dereferencing
+drm / sti : in crtc_atomic_flush , enable only planes of this crtc
+iommu / vt - d : Fix NULL pointer dereference in device_to_iommu
+AFS : Fix possible null pointer dereference in afs_alloc_server ()
 greybus : core : fix hd - creation error path
-cxlflash : Fix to prevent stale AFU RRQ
+USB : ftdi_sio : fix minor typo in get_ftdi_divisor
+[ TCP ] tcp_probe : use GCC printf attribute
 ath9k_hw : print device ID if not supported
-bonding : in balance - rr mode , set curr_active_slave only if it is up
 drbd : fix memory leak in drbd_adm_resize
-tipc : Add in missing lock during link initialization
-[ media ] saa7134 : v4l2 - compliance : clear reserved part of VBI structure
-kernfs : update kernfs_rename_ns () to consider KERNFS_STATIC_NAME
-mtd : mtk - nor : adjust sequence of trigger function and assignment function
-cxl : Disable SPAP register when freeing SPA
-hvc_xen : NULL dereference on allocation failure
-mmc : mmci : fix mmci_post_request
-[ media ] media : vb2 - memops : Export vb2_get_vma symbol
-usb : dwc3 : gadget : stop touching HWO TRBs
-pcmcia : fix incorrect bracketing on a test
-pppoe : Lacks DST MAC address check
-dmaengine : pl330 : Check if the DMA descriptor is NULL
-x86 : Use string instruction memcpy on AMD Fam11h
-perf / x86 : Check perf_callchain_store () error
-isdn : mISDN : set -> family in -> getname ()
-drivers / rtc / rtc - rv3029c2 . c : fix disabling AIE irq
-cfg80211 : fix truncated IEs
-rtlwifi : rtl8192se : Fix gcc 4 . 7 . x warning
+i40e : stop the service task at shutdown
+mtd : atmel_nand : trivial : change DMA usage information trace
+fb_defio : Push file_update_time () into fb_deferred_io_mkwrite ()
+KVM : SVM : Set the ' busy ' flag of the TR selector
+greybus : greybus_protocol : fix order of sdio get caps response
+usb : xhci : Fix OOPS in xhci error handling code
+usb : gadget : storage : release superspeed descriptors .
+[ PATCH ] Add deprecated_for_modules
+[ PATCH ] um : fix - up schedule_timeout () usage
+s390 / io : add ioport_map stubs
+pNFS : Skip invalid stateids when doing a bulk destroy
+fsl / fman : fix error handling
+Btrfs : fix clone ioctl where range is adjacent to extent
+cpufreq : prevent lockup on reading scaling_available_frequencies
+drm / radeon / kms : mmio base / size should be resource_size_t .
+Staging : rc2860 : return - EFAULT on copy_to_user errors
+drbd : merge_bvec_fn : properly remap bvm -> bi_bdev
+skge : Unmask interrupts in case of spurious interrupts
+Input : twl4030 - pwrbutton - fix a leak of the IRQ during init failure
+fs : befs : remove unnecessary * befs_sb variable
 radiotap : fix bitmap - end - finding buffer overrun
+iommu / amd : Free domain id when free a domain of struct dma_ops_domain
+video : s3c - fb : return an error when bpp is invalid
+[ SPARC64 ]: Fix of_device bus_id settings .
+f2fs : avoid to trigger writepage during POR
 dm bufio : initialize read - only module parameters
-ceph : properly set issue_seq for cap release
-ACPICA : Fix memory leak in table load error path
-UBIFS : check return code
-spi : pxa2xx : missing break in pxa2xx_ssp_get_clk_div ()
-ieee802154 : Fix oops during ieee802154_sock_ioctl
-iwlwifi : fix TX tracer
-ARM : mx51 : Fix the address space length for SSI
-Drivers : hv : vmbus : Fix a bug in vmbus_open ()
+rpc : fix garbage in printk in svc_tcp_accept ()
+ALSA : snd - usb - caiaq : Lock on stream start / unpause
+ocfs2 : Filter - ENOSPC in mlog_errno ()
+ds2760_battery : Add missing kfree ( di ) in ds2760_battery_remove ()
+ath6kl : add missing of_node_put
 usb : gadget : net2280 : Fix NULL pointer dereference
-blk - mq : stop hardware queue in blk_mq_delay_queue ()
-[ media ] cxd2820r : wait demod lock for DVB - C too
-[ libata ] sata_sil : fix used - uninit warning
-dma : pl330 : Set residue_granularity
-firewire : ohci : correct signedness of a local variable
+i40e : Expose ' trust ' flag to userspace via ndo_get_vf_config .
+[ IPV6 ]: Reorg struct ifmcaddr6 to save some bytes
+Input : gpio - keys - report error when disabling unsupported key
+[ libata ] ata_piix : add HP compaq laptop to short cable list
 loop : fix NULL dereference if mount fails
-drm / exynos : exynos_hdmi : Pass correct pointer to free_irq ()
+block : check partition alignment
+drm / radeon : don ' t share PPLLs on DCE4 . 1
+rtnl : fix msg size calculation in if_nlmsg_size ()
 staging : slicoss : use status in slic_ioctl
-drm / i915 : Enable GMBUS for post - gen2 chipsets
-skge : Adjust a null pointer check in skge_down ()
-[ PATCH ] m68knommu : switch 68360 to using rtc_time
-gpio : davinci : Fix possible NULL pointer deference
-w1 - call request_module with w1 master mutex unlocked
-axp288_fuel_gauge : Add original author details
-slab : Use proper formatting specs for unsigned size_t
-USB : sierra : fix urb and memory leak in resume error path
-sh_eth : enable wake - on - lan for sh7734
-gpio : mcp23s08 : request a shared interrupt
-ALSA : hda - Sync EAPD with vmaster on AD1984A Thinkpads
-cxl : remove redundant increment of hwirq
+tcp : fastopen : avoid negative sk_forward_alloc
+mm : vmscan : fix misused nr_reclaimed in shrink_mem_cgroup_zone ()
+gpio : aspeed : Add open - source and open - drain support
+mac80211 : mesh only parameter mppath maybe unused
+batman - adv : Detect missing primaryif during tp_send as error
+amd64_edac : fix ECC checking
+[ S390 ] cio : dont forget to set last slot to NULL in ccw_uevent ().
+staging : slicoss : fix a leak when kzalloc fail
+drm / ttm : test for dma_address array allocation failure
+mlxsw : spectrum : Don ' t take multiple references on a FID
+[ SCSI ] pm8001 : bit set pm8001_ha -> flags
+ath : do not update cycle counters with sleep mode
+flex_array : fix the panic when calling flex_array_alloc () without __GFP_ZERO
 drm / radeon : don ' t setup audio on asics that don ' t support it
-staging : lustre : dne : setdirstripe should fail if not supported
-Staging : ozwpan : prevent bogus dereference
+[ PATCH ] USB : don ' t allocate dma pools for PIO HCDs
 spi : fix spi_s3c24xx_gpio device handle lookup
+[ PATCH ] manage - jbd - its - own - slab fix
+gro : Fix bogus gso_size on the first fraglist entry
 Btrfs : return error code in btrfs_check_trunc_cache_free_space ()
-igb : cap interrupts at 20K per queue when in itr mode 3
-staging : ft1000 : fix kernel info leak to userland for statistics
-ext3 : destroy sbi mutexes in put_super
-ALSA : hda - check NULL pointer when creating SPDIF controls
+KVM : fix fault page leak
+[ SPARC64 ]: Use alloc_pci_dev () in PCI bus probes .
+e1000e : increase minimum frame size allowed
 usb : chipidea : udc : zero - length packet is only needed for TX
-geneve : Unregister pernet subsys on module unload .
-x86 , quirk : Fix SB600 revision check
-net : avoid NULL deref in inet_ctl_sock_destroy ()
-[ Bluetooth ] Revert session reference counting fix
-[ media ] em28xx - i2c : rt_mutex_trylock () returns zero on failure
-pktgen : fix crash with vlan and packet size less than 46
-Staging : slicoss : changes memory allocation style in slicoss . c
-mtd : docg3 : fix BCH registers
-KVM : s390 : implement KVM_CAP_NR / MAX_VCPUS
-virtio_console : Don ' t access uninitialized data .
+mei : reset client connection state on timeout
+dm stripe : fix potential for leak in stripe_ctr error path
+tmpfs : truncate prealloc blocks past i_size
+drivers / net / cxgb3 / cxgb3_main . c : prevent reading uninitialized stack memory
+s2io : Don ' t receive packets when the napi budget == 0
+[ X25 ]: Restore skb -> dev setting in x25_type_trans ().
+drm / i915 : CR clock gating is recommend to be set on PineView
+spi : spi - davinci : Fix variable type
+ALSA : hda - Intialize more codec fields in snd_hda_codec_reset ()
+iwlagn : overwrite EEPROM chain setting for 6250 devices
+rt2800 : fix wrong TX power compensation
+[ SCSI ] megaraid : Use the proper type to hold the irq number .
+USB : make the autosuspend workqueue thread freezable
+tty / serial / sirf : fix error propagation in sirfsoc_uart_probe ()
+ARM : shmobile : mackerel : remove OCR masks , where regulators are used
+ALSA : lx646es : Fix possible uninitialized variable reference
+PCI : of : Add 64 - bit address recognition without LPAE support
+x86 : fix broken flush_tlb_others_ipi ()
 f_phonet : fix page offset of first received fragment
 [ SCSI ] qla2xxx : Correct IOCB queueing mechanism for ISP54XX HBAs .
-[ SCSI ] nsp_cs : fix buf overflow
-staging : unisys : remove S8 type
-PCI : Use dev_is_pci () to identify PCI devices
-ASoC : rt5645 : Check if codec is initialized in workqueue handler
-phy : Add reset callback for not generic phy
-f2fs : fix wrong max cost initialization
-USB : missing error check in emi26
-perf bench : Fix NULL pointer dereference in " perf bench all "
-qxl : check for kmap failures
-[ IPV4 ]: Make tcp_input_metrics () get minimum RTO via tcp_rto_min ()
-selinux : fix off - by - one in setprocattr
+mac80211 : fix ieee80211_sta_process_chanswitch for 5 / 10 MHz channels
+KVM : ARM : VGIC : Optimize the vGIC vgic_update_irq_pending function .
+[ ATM ] firestream : Fix uninitialized var warning .
+inetpeer : fix token initialization
+KVM : MMU : make for_each_shadow_entry aware of largepages
+[ media ] tda8290 : Fix a bug if no tuner is detected
+mm , vmstat : Remove spurious WARN () during zoneinfo print
+ext4 : Fix ext4_free_blocks () w / o a journal when files have indirect blocks
+ARM : mach - imx : clk - pllv2 : Staticize clk_pllv2_ops
+usbfs : Fix oops related to user namespace conversion .
+[ CPUFREQ ] powernow - k8 : get drv data for correct CPU
+unix / dgram : peek beyond 0 - sized skbs
+perf hists browser : Add NULL pointer check to prevent crash
+sysctl : Add neg_one as a standard constraint
+tracing : fix ref count in splice pages
 greybus : uart : Fix the memory leak in connection init
-Input : rohm_bu21023 - fix handling of retrying firmware update
 [ ALSA ] ca0106 - Add missing sysfs device assignment
-f2fs : initialize newly allocated dnode structure
-slab numa fallback logic : Do not pass unfiltered flags to page allocator
-drm / radeon / kms / DCE4 . 1 : ss is not supported on the internal pplls
-input : pmic8xxx - pwrkey : Do not use mfd_get_data ()
-e1000e : Correctly include VLAN_HLEN when changing interface MTU
-mm , fs : check for fatal signals in do_generic_file_read ()
-drm : WARN when removing unallocated node
-mac80211 : fix rate control initialisation
-iio : ti_am335x_adc : Fix : Use same step id at FIFOs both ends
-cpuset : fix RCU lockdep splat in cpuset_print_task_mems_allowed ()
-mfd : Fix return type of lm533 attribute is_visible
-mfd : cros_ec : Instantiate ChromeOS EC character device
-dm stats : fix a leaked s -> histogram_boundaries array
-clk : mvebu : fix setting unwanted flags in CP110 gate clock
-unix : use wq_has_sleeper in unix_dgram_recvmsg
-[ TCP ]: Fix TCP header misalignment
-mailbox , pl320 - ipc : remove __init from probe function
-drm : Return EBUSY if the framebuffer is unbound when flipping .
-clk : max77686 : fix number of clocks setup for clk_hw based registration
-acpi - cpufreq : Do not load on K8
-r8152 : check RTL8152_UNPLUG for rtl8152_close
-mtd : docg3 : fix debug log verbosity
-[ PATCH ] 2 . 6 . 17 missing a call to ieee80211softmac_capabilities from ieee80211softmac_assoc_req
-Staging : sep : potential buffer overflow in ioctl
-spi_mpc8xxx : Fix uninitialized variable
+f2fs : fix wrong condition for unlikely
+dm snapshot : fix metadata corruption
+USB : add a private - data pointer to struct usb_tt
+KVM : Grab pic lock in kvm_pic_clear_isr_ack
+drm / radeon / atom : workaround vbios bug in transmitter table on rs780
+staging : comedi : das16 : use comedi_handle_events ()
+microblaze : Ptrace notifying from signal code
+iwlwifi : mvm : disable uAPSD due to bugs in the firmware
+qed : Fix error return code in qed_resc_alloc ()
+OMAP : DSS2 : Taal : Fix ESD check
+dlm : make posix locks interruptible
+ide : add missing rq . ref_count initialization to ide_diag_taskfile ()
+KVM : x86 : Improve thread safety in pit
+drm / i915 / skl : Don ' t skip mst encoders in skl_ddi_pll_select ()
+ASoC : imx - es8328 : Register jacks at the card level
+[ ARM ] Use kcalloc to allocate counter_config array rather than kmalloc
+USB : belkin_sa : avoid divide by zero error
+drm / nouveau : v3 . 0 pll limits tables have type <-> register mapping too
+perf tools : Fix map_groups__clone to put cloned map
+perf / hwbp : Fix cleanup in case of kzalloc failure
 KVM : PPC : Initialize linears with zeros
-ASoC : Do not write to invalid registers on the wm9712 .
-pkt_sched : Add queue stopped test back to qdisc_run ().
-ASoC : Intel : Skylake : Initialize NHLT table
-mac80211 : fix register_hw error path
-x86 / PCI : don ' t bother with root quirks if _CRS is used
-ARM : 6891 / 1 : prevent heap corruption in OABI semtimedop
-iommu / amd : Fix BUG when faulting a PROT_NONE VMA
-iwlagn : save the latest smps mode
-[ media ] tm6000 : Don ' t try to use a non - existing interface
-fcoe : ensure that skb placed on the fip_recv_list are unshared
-dmaengine / ste_dma40 : fix introduced warnings
-ATM : mpc , fix use after free
-xfrm : Don ' t allow esn with disabled anti replay detection
-f2fs : fix inconsistency of block count during recovery
-tg3 : Set initial carrier state to off .
-cgroups : make unlock sequence in cgroup_get_sb consistent
-drm / i915 : make sparse happy for the new vlv mmio read function
-iio : ad5755 : fix off - by - one on devnr limit check
-dma : edma : Fix memory leak
-[ PATCH ] powerpc : make OF interrupt tree parsing more strict
-usb : otg : Make USB3319 ULPI ID generic
-mac80211 : avoid aggregation for VO traffic
+drbd : fix spurious protocol error
+mwifiex : block data traffic to tx paused receive address
+[ IPV6 ] ROUTE : Allow searching subtree only .
+w1 : fix for loop in w1_f29_remove_slave ()
+Btrfs : disable snapshot aware defrag for now
+drm / i915 : Prevent use - after - free of inherited framebuffer
+cfg80211 : fix potential connection work crash
+Staging : wlan - ng : wiphy_free () is not called in case wiphy_register () fails
+clk : tegra : Register the proper number of resets
+lsm : Use a compressed IPv6 string format in audit events
+sched : terminate newidle balancing once at least one task has moved over
+Staging : bcm : info leak in ioctl
+cxgb4vf : Use defined Mailbox Timeout
+r8169 : fix a bug in rtl8169_init_phy ()
+cdc_ncm : return - ENOMEM if kzalloc fails
+crypto : img - hash - Fix hash request context
+atm : ambassador : use NULL instead of 0 for pointer
+[ PATCH ] v9fs : return the correct error when interrupted by signal
+mtd : nand : tmio_nand : show parent device in sysfs
+md : Fix raid1 -> raid0 takeover
+tracing : Don ' t make assumptions about length of string on task rename
 fbdev : bf537 - lq035 : add missing blacklight properties type
-chelsio : error path fix
-Btrfs : fix memory leak in btrfs_parse_early_options ()
-UBI : return on error in rename_volumes ()
-drivers / net / wireless / b43 / main . c : 4351 : Fixed coding style
-[ PATCH ] dm table split_args : handle no input
-staging : unisys : visorchannel : Place logical continuation at the end of a line
+tools lib traceevent : Free filter tokens in process_filter ()
 tun : update file current position
-vhost : copy_to_user -> __copy_to_user
-sfc : check for allocation failure
-r8152 : check tx agg list before spin lock
-gro : Reset dev pointer on reuse
-slub : Zero initial memory segment for kmem_cache and kmem_cache_node
-quota : Fix WARN_ON in lookup_one_len
-ARM : KVM : Bugfix : vgic_bytemap_get_reg per cpu regs
-dm log writes : move IO accounting earlier to fix error path
-mtd : elm : Use correct check on return value of pm_runtime_get_sync
-staging : dwc2 : fix thinko in dwc2_hc_set_even_odd_frame ()
-staging : iio : compress return logic
-ext4 : verify extent header depth
-Btrfs : fix bitmap size tracking
-drm : mxsfb : Fix crash when provided invalid DT bindings
+tracing / function - graph : Use correct string size for snprintf
+OMAP : DSS2 : Check if display supports update mode changes
+tty : serial : Use GFP_ATOMIC instead of GFP_KERNEL in serial8250_em485_init ()
+drm / i915 : Fix NULL pointer deference when out of PLLs in IVB
+arm : mxs : add irq_chip - name for GPIO IRQs
+mfd : Fix possible s5m null pointer dereference
+[ media ] xc5000 : use after free in release ()
+p54 : use ether_addr_equal_64bits
+[ PATCH ] invalidate_inode_pages2_range () debug
+HID : extend autodetect to handle I2C sensors as well
 staging : ozwpan : Check error condition before creating endpoint .
-do_wait () wakeup optimization : child_wait_callback : check __WNOTHREAD case
-Staging : comedi : rtd520 : &&/|| typo
-[ PATCH ] s3c2410fb : fix un - initialised dev field
-dm thin : fix a memory leak when passing discard bio down
-usb : xhci - plat : properly handle probe deferral for devm_clk_get ()
-[ SPARC ]: Fix exec failures on sun4c .
-USB : OHCI : don ' t allocate HCCA atomically
-[ PATCH ] uml : activate_fd : return ENOMEM only when appropriate
-dmaengine : rcar - dmac : use result of updated get_residue in tx_status
-mm : batch - free pcp list if possible
-tokenring / 3c359 . c : Prevent possible mem leak when open failed
-ceph : cleanup aborted requests when re - sending requests .
-[ media ] usbvision : fix locking error
+ALSA : maestro3 : Clear interrupts before enabling them
+fuse : Initialize total_len in fuse_retrieve ()
+stmmac : fix oversized frame reception
+pm8001 : Fix to remove null pointer checks that could never happen
+firewire : core : fix an information leak
+sparc64 : Fix overshoot in nid_range ().
+rtlwifi : rtl8192cu : Fix unitialized struct
+iwlagn : use vif -> type to check station
+rxrpc : Validate the net address given to rxrpc_kernel_begin_call ()
+xfs : prevent leaking uninitialized stack memory in FSGEOMETRY_V1
+[ media ] r820t : Fix IF scale
+drm / radeon / kms : Don ' t kzalloc memory which is immediately overwritten .
+mwifiex : Fix possible buffer overflows in mwifiex_ret_wmm_get_status ()
+ASoC : Intel : Skylake : Don ' t unload module when in use
+firestream : fix spelling mistake : " reseverd " -> " reserved "
+wlcore : fix unsafe dereference of the wlvif
 airo : return from set_wep_key () when key length is zero
-[ ALSA ] Fix possible deadlocks in sequencer at removal of ports
-net : call newid / getid without rtnl mutex held
+Input : tegra - kbc - fix inverted reset logic
+ASoC : SSM2602 : Add entry for the ssm2603 to the device id table
+[ SCSI ] qla2xxx : Correct report - id acquisition check
 ASoC : SOF : ipc : Fix memory leak in sof_set_get_large_ctrl_data
+crypto : caam - fix output sequence contiguity check
+e1000e : static analysis tools complain of a possible null ptr p dereference
 ath5k : use tasklet_hi_schedule for beacon queue
-KVM : MCE : Add MCG_SER_P into KVM_MCE_CAP_SUPPORTED
-KVM : nSVM : Fix IOIO size reported on emulation
-modedb : fix incorrect sync and vmode flags for CVT modes
+fm10k : Fix a potential NULL pointer dereference
+batman - adv : fix potential orig_node reference leak
+perf hists browser : Fix segfault if use symbol filter in cmdline
+tracing : Have error path in predicate_parse () free its allocated memory
+cfg80211 : ignore invalid BSSIDs when looking for BSSes
+usb : chipidea : usb2 : check memory allocation failure
+ASoC : Free the card ' s DAPM context
+[ media ] sh_veu : v4l2_dev wasn ' t set
 [ PATCH ] net / pcnet32 : replace schedule_timeout () with msleep_interruptible ()
-mac80211 : reduce stack usage in sta_ht_capa_read ()
-[ media ] omap3isp : Handle omap3isp_csi2_reset () errors
 [ ALSA ] ASoC : Fix TLV320AIC3X mono line output interconnect
-usb : musb : host : fix for musb_start_urb Oops
-mwifiex : Fix possible buffer overflows in mwifiex_cmd_802_11_ad_hoc_start
-defxx . c : dfx_bus_init () is __devexit not __devinit
-staging / xgifb : Remove unnecessary binary calculation in GetXG27FPBits
-mwifiex : corrections in PCIe event skb handling
-mac80211 : fix uninitialized variable
-proc : fix oops on invalid / proc /< pid >/ maps access
-[ PATCH ] struct path : convert ieee1394
-btrfs : fix in - memory value of total_devices after seed device deletion
-md : allow a partially recovered device to be hot - added to an array .
-USB : serial : fix error message on close in generic driver
-[ SCSI ] Fix uninitialised width and speed in sym2
-rcu : add DEBUG_OBJECTS_RCU_HEAD check for alignment
-Btrfs : fix memory leak in start_transaction ()
-[ IA64 ] Prevent sn2 ptc code from executing on all ia64 subarches
-[ PATCH ] cciss : set default raid level when reading geometry fails
-dm : fix the second dec_pending () argument in __split_and_process_bio ()
-[ media ] ascot2e : Fix I2C message size check
-ext4 : fix incorrect block reservation on quota transfer .
-[ ALSA ] Fix errors with user TLV_WRITE
-fs : allow d_instantiate to be called with negative parent dentry
-[ PATCH ] orinoco : Fix memory leak on error in processing hostscan frames .
+ALSA : timer : Fix leak in events via snd_timer_user_tinterrupt
+drm / vmwgfx : Fix a buffer object leak
+dmaengine : bcm - sba - raid : serialize dma_cookie_complete () using reqs_lock
+rpmsg : char : release allocated memory
+iwlwifi : pcie : fix TVQM queue ID range check
+hv_netvsc : fix a race between netvsc_send () and netvsc_init_buf ()
+Yama : handle 32 - bit userspace prctl
+crypto : api - Fix crypto_drop_spawn crash on blank spawns
+watchdog : Fix null pointer dereference while accessing rdc321x platform_data
+misc : apds9802als : Fix the logic checking timeout in als_wait_for_data_ready ()
+aio : mark AIO pseudo - fs noexec
+[ ARM ] dma : convert IOMD DMA to use sg_next ()
+ACPICA : Fix memory leak on unusual memory leak
+staging : greybus : uart . c : change ' unsigned ' to ' unsigned int '
+ext4 : set h_journal if there is a failure starting a reserved handle
+irqchip / mips - gic : Map to VPs using HW VPNum
+hugetlb : fix race condition in hugetlb_fault ()
+Page migration : Do not accept invalid nodes in the target nodeset
+drm / i915 : Annotate user relocs with __user
+clk : axi - clkgen : Remove sometimes impossible check
+md : raid1 : kill warning on powerpc_pseries
+clk : hisilicon : hi3660 ： Fix potential NULL dereference in hi3660_stub_clk_probe ()
+drm / tilcdc : Take CRTC lock when calling tilcdc_crtc_disable ()
+io_uring / msg_ring : check file type before putting
 tipc : check nl sock before parsing nested attributes
 ipv4 : rate limit updating of next hop exceptions with same pmtu
-kvm : x86 : fix emulator buffer overflow ( CVE - 2014 - 0049 )
-mtd : spear_smi : clear status register on init
+[ S390 ] cio : Log the response from the unit check handler
+f2fs : correct removexattr behavior for null valued extended attribute
+[ SCSI ] be2iscsi : fix memory leak on error path
+soc / tegra : pmc : Guard against uninitialised PMC clock
 wl12xx : fix a memory leak of probereq template upon recovery
-signals , ptrace , sched : Fix a misaligned load inside ptrace_attach ()
-Staging : rtl8192e : Fix potential NULL pointer dereference
-ip6erspan : make sure enough headroom at xmit .
+block : cciss : fix information leak to userland
+KEYS : prevent KEYCTL_READ on negative key
+vfio - pci : Add missing break to enable VFIO_PCI_ERR_IRQ_INDEX
+[ PATCH ] sil24 : add testing for PCI fault
 staging : rtl8188eu : use eth_broadcast_addr () in place of memset
-f2fs : avoid wrong error during recovery
-floppy : silence warning during disk test
-ext4 : prevent stack overrun in ext4_file_open
-iommu : Stop deferring probe at end of initcalls
-mm : compaction : do not compact pgdat for order - 0
-futexes : Fix infinite loop in get_futex_key () on huge page
-staging : slicoss : Fix possible reuse of freed memory in timer function
-staging : lustre : race condition for check / use cfs_fail_val
-amd - xgbe : fix potential memory leak in xgbe - debugfs
-uwb : uwbd () is not freezable kthread
-[ PATCH ] irq - devres : fix failure path of devm_request_irq ()
-staging : ks7010 : use u16 instead of unsigned short in hostif_data_indication
-slub : Use NUMA_NO_NODE in get_partial
-drm / nouveau : require contiguous bo for framebuffer
-getname_kernel () needs to make sure that -> name != -> iname in long case
-libceph : must hold mutex for reset_changed_osds ()
-iio : adc : mcp3422 : Checking for error on probe
+orangefs : avoid freeing a slot twice in wait_for_direct_io ()
+wl3501_cs : remove pedantic build warning
+ptp_kvm : probe for kvm guest availability
+[ PATCH ] powerpc : Fix bug in bug fix for bug in lmb_alloc ()
+[ PATCH ] ppc64 : iSeries early printk breakage
+qlcnic : Remove __QLCNIC_DEV_UP bit check to read TX queues statistics .
+sctp : not allow transport timeout value less than HZ / 5 for hb_timer
+ocfs2 : fix memory leak in dlm_migrate_request_handler ()
+mac80211 : lock sdata in ieee80211_csa_connection_drop_work ()
+[ PATCH ] mac80211 : fix GCC warning on 64bit platforms
+sh : fix copy_from_user ()
+stmmac : don ' t return zero on failure path in stmmac_pci_probe ()
+igb : Fix a memory leak in igb_probe
+sctp : support sysctl to allow users to use stream interleave
+tipc : remove unnecessary call to dev_net ()
+ASoC : imx - pcm - dma : check kzalloc return value in function snd_imx_open
+staging : ozwpan : Check error condition before creating endpoint .
 ARM : pxa : Improve a size determination in pxa3xx_u2d_probe ()
-[ PATCH ] USB : resolve Zaurus problem
-sdio : handle null tuples
-[ SCSI ] mpt2sas : Bump version 08 . 100 . 00 . 00
-UBIFS : avoid kernel error if ubifs superblock read fails
+mwifiex : pcie : Fix memory leak in mwifiex_pcie_alloc_cmdrsp_buf
+ath9k_hw : fix an off - by - one error in the PDADC boundaries calculation
+ixgbe : DCB : remove DCB check config
 staging : comedi : ni_labpc : fix a > 80 char line issue
-ssb : cc : use correct min_msk for 0x4312
-ASoC : topology : Fix memory leak in widget creation
-staging , rts5208 , LLVMLinux : Change extern inline to static inline
-drm / i915 : Start WM computation from scratch on ILK - BDW
-drm / i915 / cnl : Reprogram DMC firmware after S3 / S4 resume
-Input : gpio_keys - fix a memory leak
-gpu : host1x : clk_round_rate () can return a zero upon error
+iommu / io - pgtable - arm - v7s : Check for leaf entry before dereferencing it
+mmc : dw_mmc : fix the wrong condition checking
+af_iucv : exploit target message class support of IUCV
+qed : Add missing stat for new isles
+Staging : rtl8192u : Fix no spaces around '+'
+drm / i915 : Add fifo underrun reporting state to debugfs
+[ PATCH ] lockdep : annotate scheduler runqueue locks
+xfs : use -> t_dfops in log recovery intent processing
+[ PATCH ] stack overflow safe kdump : safe_smp_processor_id (): voyager
 mqueue : fix a use - after - free in sys_mq_notify ()
-skd : Use kmem_cache_free
-perf / x86 / intel / uncore : Correct fixed counter index check for NHM
-leds - atmel - pwm . c : Make pwmled_probe () __devinit
-[ PATCH ] nfsd4 : renew lease on seqid modifying operations
-ARM64 : PCI : Fix struct acpi_pci_root_ops allocation failure path
-KVM : x86 : fix error return code in kvm_arch_vcpu_init ()
-powerpc / ptrace : Fix brk . len used uninitialised
-ALSA : correct kcalloc usage
-af_key : Do not call xfrm_probe_algs in parallel
-Btrfs : truncate pages from clone ioctl target range
-vfio / spapr_tce : Check kzalloc () return when preregistering memory
-gpio - pch : cleanup __iomem annotation usage
+iommu / amd : Check if domain is NULL in get_domain () and return - EBUSY
+drivers / net / eql . c : prevent reading uninitialized stack memory
+tipc : validate length of sockaddr in connect () for dgram / rdm
+cpufreq : Do not clear real_cpus mask on policy init
+xfs : fix missing error check in xfs_rtfree_range
+greybus : interface : fix potential attribute - buffer overflow
+drm / i915 : Fix out - of - bounds array access in bdw_load_gamma_lut
+coresight : etb10 : Move etb_disable_hw () outside of lock
+iommu : smar : Fix return value check of create_irq ()
+staging : ozwpan : prevent overflow in oz_cdev_write ()
+drm / atomic : Make atomic helper track newly assigned planes correctly , v2 .
+sched : reorder struct sched_rt_entity to remove padding on 64 bit builds
+cifs : fix use - after - free caused by invalid pointer ` hostname `
+fm10k : don ' t try to stop queues if we ' ve lost hw_addr
+staging : ozwpan : oz_pd_free () can be static
+mwifiex : sdio : fix use after free issue for save_adapter
+USB : sierra : fix urb and memory leak in resume error path
 drm / amd / display : Do DC mode - change check when adding CRTCs
-iwlwifi : mvm : request statistics when reading debugfs
-[ ALSA ] hda - codec - Fix unbalanced mutex
-ath9k : Fix TX power calculation
-ASoC : AMD : Add NULL pointer check
-[ X25 ]: Restore skb -> dev setting in x25_type_trans ().
-ovl : fix dentry reference leak
-sunvnet : fix NULL pointer dereference
-exit : proc : don ' t try to flush / proc / tgid / task / tgid
-mac80211 : fix AP - mode frame matching
-sm501fb : deallocate colormap only if allocated
-drm / amd / display : fix uninitialized variable warning
-[ media ] Don ' t OOPS if videobuf_dvb_get_frontend return NULL
-igb : fix vf lookup
-ARM : EXYNOS : fix GIC using for EXYNOS5440
+Btrfs : fix return value from btrfs_listxattr when buffer size is too small
+drm / nouveau / fifo / gp104 : initial support
+sh : Fixed the TMU0 reload value on resume
+mac80211 : fix the assignment of mesh element TTL
+KVM : Improve create VCPU parameter ( CVE - 2013 - 4587 )
+usb : gadget : fsl : fix the fault issue on rmmod
+ASoC : sst_platform : free the resources on fail path
+tpm_infineon : remove use of __devexit_p
+ima : fix add LSM rule bug
+[ CIFS ] fix trailing whitespace
+Btrfs : fix oops when btrfs_inherit_iflags called with a NULL dir
+sysctl : Add neg_one as a standard constraint
+UBIFS : return EROFS in case of broken commit
+xen : events : do not free legacy IRQs
 dccp : fix freeing skb too early for IPV6_RECVPKTINFO
-dmaengine : device must have at least one channel
+sysfs : fix hardlink count on device_move
+sched : Guarantee new group - entities always have weight
+NVMe : End sync requests immediately on failure
+f2fs : check range before defragment
 ACPI : silence kmemcheck false positive
-ARM : davinci : da830 - evm : specify the chipselect in davinci_nand_pdata
-Btrfs : don ' t run __tree_mod_log_free_eb on leaves
-mailbox : add MODULE_LICENSE () for mtk - cmdq - mailbox . c
+spi : imx : Gracefully handle NULL master -> cs_gpios
+bnx2x : Add known PHY type check
 HID : sensor - hub : fix potential memory leak
-orinoco : fix TKIP countermeasure behaviour
-exofs : use bio_clone_fast in _write_mirror
-xfs : fix missing ILOCK unlock when xfs_setattr_nonsize fails due to EDQUOT
-GFS2 : Fix freeze issue
-[ PATCH ] x86 - 64 : Fix C3 timer test
+[ SCSI ] megaraid_sas : remove sysfs dbg_lvl world writeable permissions
+spi : gpio : prevent memory leak in spi_gpio_probe
+ALSA : HDA : Fix Oops caused by dereference NULL pointer
+unix : Use FIELD_SIZEOF () in af_unix_init ().
+rt2x00 : Don ' t count retries as failure
 ALSA : usb - audio - clear chip -> probing on error exit
-[ PARISC ] set memory ranges in N_NORMAL_MEMORY when onlined
+perf / core : Update filters only on executable mmap
+proc : fix null pointer deref in proc_pid_permission ()
+ALSA : als4000 : enable burst mode
+[ SCSI ] sr : remove dead code
+ASoC : Intel : Fix incorrect sizeof () in sst_hsw_stream_get_volume ()
+xfrm : Fix kernel panic when flush and dump SPD entries
 i2c : mux : reg : wrong condition checked for of_address_to_resource return value
-xfs : validate acl count
-Btrfs : fix race between readahead and device replace / removal
-staging / xgifb : Fix return of uninitialized variable
-clk : versatile : fix memory leak
-ath9k_htc : Fix free slot value for cab queue
-tick / nohz : Fix possible missing clock reprog after tick soft restart
-[ PATCH ] autofs4 : need to invalidate children on tree mount expire
-staging : comedi : das16 : change MODULE_DESCRIPTION
-mmc : mmci : Cascade EPROBE_DEFER from regulators .
-HID : hidraw : Fix crash on HIDIOCGFEATURE with a destroyed device
-Driver Core : don ' t oops with unregistered driver in driver_find_device ()
-tcm_loop : Fix memory leak in tcm_loop_submission_work error path
-DLM : fix overflow dlm_cb_seq
-tty : Fix GPF in flush_to_ldisc ()
-[ XFS ] Fix nused counter . It ' s currently getting set to - 1 rather than
-[ SCSI ] ibmvscsi : Add 16 byte CDB support
+video : mmp : fix memcpy wrong size for mmp_addr issue
+staging : wilc1000 : add check for kmalloc allocation failure .
+[ SCSI ] libsas : Warn if ATA device detected but CONFIG_SCSI_SAS_ATA not set
+sock_diag : Fix out - of - bounds access to sock_diag_handlers []
+CacheFiles : Fix incorrect test for in - memory object collision
+drm / radeon : fix UVD 256MB check
+OMAP3 : SRAM size fix for HS / EMU devices
+xen - gntalloc : integer overflow in gntalloc_ioctl_alloc ()
+drm / vc4 : Return - EINVAL on the overflow checks failing .
+hpfs : fix warnings when the filesystem fills up
+iptunnel : make rx / tx bytes counters consistent
+btrfs : send : silence an integer overflow warning
+ARM : 6665 / 1 : Add Snapper9260 rtc wakeup interrupt pin
+[ SCSI ] be2iscsi : memset wrb for ring create
+Input : twl6040 - vibra - do not reparent to grandparent
+Btrfs : Add error handle for btrfs_search_slot () in btrfs_read_chunk_tree ()
+parisc / PCI : Set type for LBA bus_num resource
+scsi : lpfc : Fix NULL pointer dereference during PCI error recovery
+xen / blkfront : Make sure that the device is fully ready before allowing release .
 [ SCSI ] qla4xxx : a small loop fix
-ALSA : hda / realtek - Fix possible Oops with NULL input_mux
-pch_dma : fix error return code in pch_dma_probe ()
-coresight : fix kernel panic caused by invalid CPU
-usb : gadget : f_ecm : fix missing unlock on error in ecm_alloc ()
+Btrfs : Fix balance panic
 md : make recovery started by do_md_run () visible via sync_action
-bpf : fix missing error return in check_stack_boundary ()
+x86 / topology : Handle CPUID bogosity gracefully
 typhoon : Add missing firmware copy .
-crypto : dcp - Check the return value from devm_ioremap_resource ()
-mei : start disconnect request timer consistently
-drm : missing drm_vm . c changes for consistent maps
-generic - adc - battery : Fix checking return value of request_any_context_irq
-i2c : ismt : prevent memory corruption in ismt_access ()
-tcp : skb_mstamp_after helper
-mtd : spi - nor : Off by one in cqspi_setup_flash ()
-drivers / net / fs_enet : remove null pointer dereference
-ASoC : sgtl5000 : defer the probe if clock is not found
-btrfs : add check to sysfs handler of label
-video : uvesafb : Fix integer overflow in allocation
-timekeeping : Make local variables static
-mtd : onenand : omap2 : Remove skip initial unlocking support
-UBI : always re - read in case of read failures
-drm / i915 : Discard objects from mm global_list after being shrunk
-mac80211 : fix ieee80211_sta_process_chanswitch for 5 / 10 MHz channels
+mmc : sdhci : fix low memory corruption
+usb : storage : return on error to avoid a null pointer dereference
+vmscan : promote shared file mapped pages
+USB : yurex : Fix missing URB_NO_TRANSFER_DMA_MAP flag in urb
+Btrfs : avoid warning bomb of btrfs_invalidate_inodes
+drm : bochs : Prevent double - free of fb helper
+staging : most : fix sparse warning Using plain integer as NULL pointer
+ipv4 : fix debug info in tnode_new
+[ PATCH ] i2c : chips / ds1374 . c fixup
+mtd : atmel_nand : increase chip_delay
+signal : Fix name of SIGEMT in # if defined () check
+tpm_crb : check for bad response size
+ipv6 : fix devconf after adding force_tllao option
+ibmvnic : Fix NAPI structures memory leak
+[ ALSA ] aoa : platform function gpio : ignore errors from functions that don ' t exist
+perf / core : Fix potential double - fetch bug
+perf intel - PT / BTS : Add missing initialization
+amd_iommu : do not dereference a NULL pointer address .
+iio : inkern : allocate zeroed memory
 iio : imu : adis16400 : release allocated memory on failure
-[ PATCH ] e1000 : Enable polling before enabling interrupts
-dmaengine : imx - sdma : fix up param for the last BD in sdma_prep_slave_sg ()
+hwmon : ( scmi ) handle absence of few types of sensors
+[ PATCH ] Fix oops in vfs_quotaon_mount ()
+EDAC : Respect operational state in edac_pci . c
+x86 / irq : Fix move_irq_desc () for nodes without ram
+xprtrdma : Fix DMA - API - DEBUG warning by checking dma_map result
+f2fs : fix a dead loop in f2fs_fiemap ()
+staging : rtl8188eu : Use kcalloc instead of kzalloc .
+[ media ] tvp5150 : allow get / set_fmt on the video source pad
+[ ALSA ] soc - Clean up tabs
+soc : ti : knav : Add a NULL pointer check for kdev in knav_pool_create
+ibmvnic : Free tx / rx scrq pointer array when releasing sub - crqs
 iio : buffer : Free active scan mask in iio_disable_all_buffers ()
+perf report : Compare symbol name for inlined frames when sorting
 scsi : hpsa : do not reset enclosures
-ext4 : fix deadlock with quota feature
-hwmon : ( asb100 ) Fix vrm write operation
-vesafb : fix memory leak
-ext4 : check for zero length extent
-be2net : fix pmac_id for BE3 VFs
-phonet : refcount leak in pep_sock_accep
-mm : Fix NULL pointer dereference in madvise ( MADV_WILLNEED ) support
-s390 / cpumf : add missing lpp magic initialization
-pinctrl : pinconf : fix comparison of different types
-drm / nouveau / devinit / nv04 : change owner to int
-iwlwifi : mvm : disable scheduled scan
-drm / nouveau / bios / gp104 : initial support
-ASoC : Fix incorrect kfree in wm8731_probe error path
-ext4 : fix potential integer overflow
-fs : clear writeback errors in inode_init_always
-KVM : PIT : control word is write - only
+xfrm_user : fix info leak in copy_to_user_tmpl ()
+drivers : net : slip : fix NPD bug in sl_tx_timeout ()
+vhost : actually track log eventfd file
+mtd : spear_smi : add NULL check on devm_kzalloc () return value
+lib / decompress : set the compressor name to NULL on error
+drm / i915 / execlists : Add a GEM_TRACE to show when the context is completed
+drm / i915 / sdvo : Cleanup connector on error path
+KVM : MTRR : remove MSR 0x2f8
+netrom : Fix use - after - free caused by accept on already connected socket
+mac80211 : fix register_hw error path
+bcache : fix cache_set_flush () NULL pointer dereference on OOM
+rapidio : switch to get_user_pages_fast ()
+staging : fbtft : make const array gamma_par_mask static
+ASoC : rockchip : Enable 192khz in hw_params operation
+ALSA : usb - audio : Fix out - of - bound error
+jiffies : add utility function to calculate delta in ms
+virtio : fix memory leak in virtqueue_add ()
+drivers : thermal : parent virtual hwmon with thermal zone
+drm / radeon : do not hard reset GPU while freezing on r600 / r700 family
+mlxsw : spectrum : Fix ageing time value
 TTY : hvcs : fix missing unlock on error in hvcs_initialize ()
-mfd : Add free max8998 -> ono irq in max8998_irq_exit ()
-KVM : PPC : Book3S : Check KVM_CREATE_SPAPR_TCE_64 parameters
-stmmac : add missing of_node_put
-ARM : omap - device : add missed callback for suspend - to - disk
-ieee1394 : SPIN_LOCK_UNLOCKED cleanup
+regmap : Silence warning on invalid zero length read
+s390 / qeth : fix thinko in IPv4 multicast address tracking
+ALSA : hda - Cirrus : Correctly clear line_out_pins when moving to speaker
+x86 - 64 : Fix the failure case in copy_user_handle_tail ()
+iio : iio_buffer_register : Skip channels with negative scan index
+[ SCSI ] scsi_lib : use correct DMA device in __scsi_alloc_queue
 mac80211 : fix a possible leak of station stats
-ceph : fix cap_wanted_delay_ { min , max } mount option initialization
-tcp : fix TSO FACK loss marking in tcp_mark_head_lost
-fs / cifs / cifs_dfs_ref . c : fix potential memory leakage
-ipmi : Fix memory leak in __ipmi_bmc_register
-[ PATCH ] kyrofb : Fix uninitialized value
-aha1542 : Convert aha1542_intr_reset to function
-mfd : Mark two lm3533 zone registers as volatile
-fcoe : make sure fcoe frames are unshared prior to manipulating them
-sunrpc : don ' t register UDP port with rpcbind when version needs congestion control
-max17042_battery : Handle irq request failure case
-batman - adv : Add BATADV_DBG_TP_METER to BATADV_DBG_ALL
-[ media ] cx231xx : prints error code if can ' t switch TV mode
+ipv6 : udp : fix the wrong headroom check
+perf tools : Don ' t free list head in parse_events__free_terms
+USB : prevent autosuspend during hub initialization
+Btrfs : fix em leak in find_first_block_group
+isdn : off by one in connect_res ()
+cxlflash : Fix to prevent stale AFU RRQ
+scsi : qla2xxx : correctly shift host byte
 sctp : Use correct sideffect command in duplicate cookie handling
-jfs : prevent NULL deref in diFree
-memcg : fix leak of accounting at failure path of hugepage collapsing
+Drivers : hv : fcopy : restore correct transfer length
+ext2 : Check return value from ext2_get_group_desc ()
+mmc : sdhci - acpi : Handle return value of platform_get_irq
 xfrm_user : fix info leak in copy_to_user_state ()
-Staging : comedi : off by one in doDevConfig ()
-staging : mt7621 - dma : Fix ident by space
-cgroup : add sparse annotation to cgroup_iter_start () and cgroup_iter_end ()
-ARM : mvebu : mvebu - soc - id : add missing clk_put () call
-uprobes : split THPs before trying to replace them
-drm / i915 : don ' t pwrite tiled objects through the gtt
-[ SCSI ] libfc : fix payload size passed to fc_frame_alloc () in fc_lport_els_request
+perf , x86 : Fix Intel fixed counters base initialization
+[ PATCH ] powerpc : IOMMU : don ' t ioremap null addresses
 irda : fix overly long udelay ()
-cpufreq_stats : do not remove sysfs files if frequency table is not present
-OMAPDSS : fix registering the vsync isr in apply
-bcache : fix use - after - free in btree_gc_coalesce ()
-pNFS : Ensure we check layout validity before marking it for return
-hv_netvsc : use kcalloc
-ASoC : WM8903 : Free IRQ on device removal
-firewire : cdev : fix another memory leak in an error path
-drm : make drm_minors_cleanup () static
-au1xxx - ide : use ide_find_port ()
-tracing : Uninitialized variable in create_tracing_map_fields ()
-ASoC : Intel : Skylake : Fix memory leak during init instance
+x86 : check range in reserve_early ()
+[ media ] marvell - ccic : fix V4L2_PIX_FMT_SBGGR8 support
+sched : Fix information leak in sys_sched_getattr ()
+video : vt8500lcdfb : Remove kfree call since devm_kzalloc () is used
+mfd : Use the AB8500 ' s IRQ domain to convert hwirq to virq
+f2fs : exclude special cases for f2fs_move_file_range
 ipv4 : fib : Export free_fib_info ()
+ceph : avoid null deref in osd request error path
 drm / i915 : fix EDID memory leak in SDVO
 Staging : rtl8187se : Remove unnecessary braces around single statement in dot11d . c
-Input : powermate - fix oops with malicious USB descriptors
-ptr_ring : fail early if queue occupies more than KMALLOC_MAX_SIZE
-Input : return correct size when reading modalias attribute
-RDS : Heap OOB write in rds_message_alloc_sgs ()
-staging : lustre : llog : prevent out - of - bound index
+mtd : mtd_blkdevs : don ' t increase ' open ' count on error path
+compat : fix 4 - byte infoleak via uninitialized struct field
+iio : buffer : Fix NULL pointer deref caused by empty scan mask
+imx - drm : ipu - dp : Check the return value of devm_kzalloc ()
+kconfig : Avoid buffer underrun in choice input
+ext4 : Avoid null pointer dereference when decoding EROFS w / o a journal
+[ media ] em28xx : Fix vidioc fmt vid cap v4l2 compliance
+aacraid : prevent invalid pointer dereference
+xfs : fix directory hash ordering bug
+rtlwifi : btcoex : 21a 2ant : just return when wifi is under ips
+avr32 : Fix sigaltstack behaviour
+mmc : debugfs : Print ext_csd in ascending order
 KVM : VMX : fix page leak in hardware_setup ()
-drm / amdgpu : it should disable gfxoff when system is going to suspend
-staging : comedi : ni_6527 : reset edge detection registers
+udp : harden copy_linear_skb ()
+usb : chipidea : add system interface for ttctrl . ttha
+drm : Fixup locking WARNINGs in drm_mode_config_reset
+drm / mediatek : plane : Use FB ' s format ' s cpp to compute x offset
 ipv6 : fix possible crashes in ip6_cork_release ()
+ALSA : compress : fix an integer overflow check
+inotify : fix coalesce duplicate events into a single event in special case
+iio : accel : bmc150 - accel : fix counting direction
+[ SCSI ] bnx2i : Added reconnect fix connecting against Lefthand targets
 [ PATCH ] s390 : bug in setup_rt_frame
-cassini : fix off by one
-KVM : avoid NULL pointer dereference in kvm_dirty_ring_push
-ASoC : img - parallel - out : Add pm_runtime_get / put to set_fmt callback
-sctp : Correctly track if AUTH has been bundled .
-powerpc : Add missing prototype for hdec_interrupt
-staging : iio : compress return logic
-block : initialise bd_super in bdget ()
-ALSA : hdspm - Fix PCI ID for PCIe RME MADI cards
-[ SCSI ] ibmvfc : Driver version 1 . 0 . 4
-ipv6 : Add GSO support on forwarding path
-fm10k : rename mbx_tx_oversized statistic to mbx_tx_dropped
-usb : gadget : fsl_qe_udc : Remove unneeded condition
-staging / lustre / ofd : refill env in ofd_get_info
-omap3 : beagle : Fix USB host port power control
-ALSA : timer : Fix missing queue indices reset at SNDRV_TIMER_IOCTL_SELECT
+lockd : fix regression in lockd ' s handling of blocked locks
+ipv4 : dont drop packet in defrag but consume it
+KEYS : close race between key lookup and freeing
+ARM : at91 / gpio : fix display of number of irq setuped
+Staging : bcm : info leak in ioctl
+drm / i915 : fix integer overflow in i915_gem_do_execbuffer ()
+mac80211 : fix channel type recalculation with HT and non - HT interfaces
+mtd : pcmciamtd : remove dead code
+[ SCSI ] zfcp : Wait for port scan to complete when setting adapter online
+drm / amd / display : Fix FMT truncation programming
+tcp : initialize rcv_mss to TCP_MIN_MSS instead of 0
 cred : copy_process () should clear child -> replacement_session_keyring
-Reset the output value on error in _gnutls_x509_dn_to_string ()
-shaper : fix reallocation
-parse : Check for non - empty command / rspfile / rspfile_content
-Bug : Lua can generate wrong code when _ENV is < const >
-Handle NO response without message properly
-checkpath : fix allocation size of path buffer
-[ sipmsgops ] fix codec_delete_XX () parsing ( 2 )
-Fixed error concealment when no MBs are decoded in the current pic
-demux : mp4 : fix buffer overflow in parsing of string boxes .
-Prevent an OOB read in ` expand_dims . cc `
-[ tflite ] Ensure ` MatchingDim ` does not allow buffer overflow .
-fix possible format string exploit if packet dumping enabled
-[ pdf ] Defer page unloading in JS callback .
-Use the lock when accessing the buffer object .
-Upgrade a TextIterator ASSERT to a RELEASE_ASSERT as a defensive measure .
-Always call UpdateCompositedScrollOffset , not just for the root layer
+f2fs : turn down IO priority of discard from background
+libnsgif : Fix null pointer deref on frameless GIF input
+zero the arep structure ( Coverity # 115822 )
+Fixed potential buffer overflow in ` ProcessRadioRxDone `
+Fix a number - up crash bug ( Issue # 413 )
+KML : set OAMS_TRADITIONAL_GIS_ORDER for SRS returned on returned layers
+Fixed Memory Overflow Errors
+IGraphicBufferProducer : fix QUEUE_BUFFER info leak
+IOMX : do not clear buffer if it ' s allocated by component
+modbus_reply : fix copy & paste error in sanity check ( fixes # 614 )
+avoid XSS vulnerability when using OIDCPreservePost On
+fixed overflow vulnerability
+Prevent array write out - of - bounds .
+[ tfg ][ functiondef_import ] Emit error on empty function attributes
+ksmbd : check nt_len to be at least CIFS_ENCPWD_SIZE in ksmbd_decode_ntlmssp_auth_blob
+chrome_repack_locales : compress . pak files on Chrome OS
+[ MediaStream ] Pass request ID parameters in the right order for OpenDevice ()
+Check the content setting type is valid .
+Take default system font size from PlatformFont

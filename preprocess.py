@@ -67,8 +67,28 @@ def word_tokenizer(sentence):
     words = WordPunctTokenizer().tokenize(sentence)
     return words
 
-def read_raw_data(file):
+def clean_msg(str):
+    str = str.lower().strip()
+
+    patterns = list()
+    # for bot messages
+    patterns.append(r'^ignore update \' .* \.$')
+    # for shadow messages
+    patterns.append(r'^update(d)? (changelog|gitignore|readme( . md| file)?)( \.)?$')
+    patterns.append(r'^prepare version (v)?[ \d.]+$')
+    patterns.append(r'^bump (up )?version( number| code)?( to (v)?[ \d.]+( - snapshot)?)?( \.)?$')
+    patterns.append(r'^modify (dockerfile|makefile)( \.)?$')
+    patterns.append(r'^update submodule(s)?( \.)?$')
+
+    for pattern in patterns:
+        cmp = re.compile(pattern)
+        if cmp.match(str):
+            return True
+    return False
+
+def read_raw_data(file, cleaned=False):
     print(file)
+    print(cleaned)
     df = pd.read_parquet(file, engine='fastparquet')
     source_seqs = list()
     target_seqs = list()
@@ -94,6 +114,9 @@ def read_raw_data(file):
         if len(target_words) > 30 or not starts_with_verb(target_words):
             continue
         
+        if cleaned and clean_msg(target_seq):
+            continue
+
         source_seqs.append(source_seq)
         target_seqs.append(target_seq)
     
@@ -105,10 +128,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--file_dir", default=None, type=str,
                         help="File dir to read raw data")
+    parser.add_argument("--cleaned_msg", action='store_true',
+                        help="Cleaned pattern noisy msg")
     
     args = parser.parse_args()
 
-    read_raw_data(args.file_dir)
+    read_raw_data(args.file_dir, args.cleaned_msg)
 
 
 if __name__ == "__main__":
