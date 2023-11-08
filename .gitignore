@@ -112,3 +112,6 @@ ENV/
 
 # vscode
 .vscode
+cmg-data/
+data/
+archive/
