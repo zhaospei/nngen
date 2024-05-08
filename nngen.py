@@ -11,7 +11,7 @@ from nltk.translate.bleu_score import sentence_bleu
 def load_data(path):
     """load lines from a file"""
     with open(path, 'r') as f:
-        lines = f.read().split('\n')[0:-1]
+        lines = f.read().split('\n')
     lines = [l.strip() for l in lines]
     return lines
 
